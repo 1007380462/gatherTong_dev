@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e3a2b8c481dd3c4ba80ca056d23827d1",
-    "content-hash": "1f5f47312b8911150c5b40719bfefdfa",
+    "hash": "01b12a4355f04553d1a23a0e932f7297",
+    "content-hash": "87ace301dd797bd5c15e812a5d734495",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -1382,6 +1382,80 @@
                 "shell"
             ],
             "time": "2016-03-09 05:03:14"
+        },
+        {
+            "name": "socialiteproviders/gitlab",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SocialiteProviders/GitLab.git",
+                "reference": "3c4ed5d436160a9897703c063b0528719668a44f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/SocialiteProviders/GitLab/3c4ed5d436160a9897703c063b0528719668a44f.zip",
+                "reference": "3c4ed5d436160a9897703c063b0528719668a44f",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.6 || ^7.0",
+                "socialiteproviders/manager": "~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SocialiteProviders\\GitLab\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christoffer Martinsen",
+                    "email": "christoffermartinsen@gmail.com"
+                }
+            ],
+            "description": "GitLab OAuth2 Provider for Laravel Socialite",
+            "time": "2016-03-30 07:34:01"
+        },
+        {
+            "name": "socialiteproviders/linkedin",
+            "version": "v2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SocialiteProviders/LinkedIn.git",
+                "reference": "6c4180fb7ca545053312f384206e55fe1db15532"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/SocialiteProviders/LinkedIn/6c4180fb7ca545053312f384206e55fe1db15532.zip",
+                "reference": "6c4180fb7ca545053312f384206e55fe1db15532",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.6 || ^7.0",
+                "socialiteproviders/manager": "~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SocialiteProviders\\LinkedIn\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "DraperStudio",
+                    "email": "hello@draperstud.io"
+                }
+            ],
+            "description": "LinkedIn OAuth2 Provider for Laravel Socialite",
+            "time": "2016-04-01 06:59:31"
         },
         {
             "name": "socialiteproviders/manager",

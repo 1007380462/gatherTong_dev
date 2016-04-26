@@ -51,6 +51,8 @@ class ComposerStaticInite076afe45cb086ab2da8c82077e278c9
             'SocialiteProviders\\Qq\\' => 22,
             'SocialiteProviders\\Manager\\Test\\' => 32,
             'SocialiteProviders\\Manager\\' => 27,
+            'SocialiteProviders\\LinkedIn\\' => 28,
+            'SocialiteProviders\\GitLab\\' => 26,
         ),
         'P' => 
         array (
@@ -189,6 +191,14 @@ class ComposerStaticInite076afe45cb086ab2da8c82077e278c9
         'SocialiteProviders\\Manager\\' => 
         array (
             0 => __DIR__ . '/..' . '/socialiteproviders/manager/src',
+        ),
+        'SocialiteProviders\\LinkedIn\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/socialiteproviders/linkedin/src',
+        ),
+        'SocialiteProviders\\GitLab\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/socialiteproviders/gitlab/src',
         ),
         'Psy\\' => 
         array (
@@ -3074,6 +3084,10 @@ class ComposerStaticInite076afe45cb086ab2da8c82077e278c9
         'SebastianBergmann\\RecursionContext\\InvalidArgumentException' => __DIR__ . '/..' . '/sebastian/recursion-context/src/InvalidArgumentException.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
         'SessionHandlerInterface' => __DIR__ . '/..' . '/symfony/http-foundation/Resources/stubs/SessionHandlerInterface.php',
+        'SocialiteProviders\\GitLab\\GitLabExtendSocialite' => __DIR__ . '/..' . '/socialiteproviders/gitlab/src/GitLabExtendSocialite.php',
+        'SocialiteProviders\\GitLab\\Provider' => __DIR__ . '/..' . '/socialiteproviders/gitlab/src/Provider.php',
+        'SocialiteProviders\\LinkedIn\\LinkedInExtendSocialite' => __DIR__ . '/..' . '/socialiteproviders/linkedin/src/LinkedInExtendSocialite.php',
+        'SocialiteProviders\\LinkedIn\\Provider' => __DIR__ . '/..' . '/socialiteproviders/linkedin/src/Provider.php',
         'SocialiteProviders\\Manager\\Config' => __DIR__ . '/..' . '/socialiteproviders/manager/src/Config.php',
         'SocialiteProviders\\Manager\\ConfigTrait' => __DIR__ . '/..' . '/socialiteproviders/manager/src/ConfigTrait.php',
         'SocialiteProviders\\Manager\\Contracts\\ConfigInterface' => __DIR__ . '/..' . '/socialiteproviders/manager/src/Contracts/ConfigInterface.php',

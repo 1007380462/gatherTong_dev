@@ -29,6 +29,8 @@ return array(
     'SocialiteProviders\\Qq\\' => array($vendorDir . '/socialiteproviders/qq/src'),
     'SocialiteProviders\\Manager\\Test\\' => array($vendorDir . '/socialiteproviders/manager/tests'),
     'SocialiteProviders\\Manager\\' => array($vendorDir . '/socialiteproviders/manager/src'),
+    'SocialiteProviders\\LinkedIn\\' => array($vendorDir . '/socialiteproviders/linkedin/src'),
+    'SocialiteProviders\\GitLab\\' => array($vendorDir . '/socialiteproviders/gitlab/src'),
     'Psy\\' => array($vendorDir . '/psy/psysh/src/Psy'),
     'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src'),
     'PhpParser\\' => array($vendorDir . '/nikic/php-parser/lib/PhpParser'),

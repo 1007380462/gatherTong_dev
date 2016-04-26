@@ -3831,5 +3831,83 @@
             }
         ],
         "description": "weibo.com OAuth2 Provider for Laravel Socialite"
+    },
+    {
+        "name": "socialiteproviders/gitlab",
+        "version": "v2.0.0",
+        "version_normalized": "2.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/SocialiteProviders/GitLab.git",
+            "reference": "3c4ed5d436160a9897703c063b0528719668a44f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://packagist.phpcomposer.com/files/SocialiteProviders/GitLab/3c4ed5d436160a9897703c063b0528719668a44f.zip",
+            "reference": "3c4ed5d436160a9897703c063b0528719668a44f",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^5.6 || ^7.0",
+            "socialiteproviders/manager": "~2.0"
+        },
+        "time": "2016-03-30 07:34:01",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "SocialiteProviders\\GitLab\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Christoffer Martinsen",
+                "email": "christoffermartinsen@gmail.com"
+            }
+        ],
+        "description": "GitLab OAuth2 Provider for Laravel Socialite"
+    },
+    {
+        "name": "socialiteproviders/linkedin",
+        "version": "v2.0.1",
+        "version_normalized": "2.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/SocialiteProviders/LinkedIn.git",
+            "reference": "6c4180fb7ca545053312f384206e55fe1db15532"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://packagist.phpcomposer.com/files/SocialiteProviders/LinkedIn/6c4180fb7ca545053312f384206e55fe1db15532.zip",
+            "reference": "6c4180fb7ca545053312f384206e55fe1db15532",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^5.6 || ^7.0",
+            "socialiteproviders/manager": "~2.0"
+        },
+        "time": "2016-04-01 06:59:31",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "SocialiteProviders\\LinkedIn\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "DraperStudio",
+                "email": "hello@draperstud.io"
+            }
+        ],
+        "description": "LinkedIn OAuth2 Provider for Laravel Socialite"
     }
 ]

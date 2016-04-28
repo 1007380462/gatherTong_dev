@@ -1,0 +1,9 @@
+{
+	"name": "Back",
+	"slug": "back",
+	"namespace": "Back",
+	"version": "1.0",
+	"author": " ",
+	"license": "MIT",
+	"description": "This is the description for the Back module."
+}

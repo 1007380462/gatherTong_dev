@@ -1,4 +1,6 @@
 {{--社团后台管理空间--}}
+@extends('layouts.app')
+@section('content')
 <div class="container-fluid">
     <div class="row-fluid">
         <div class="span12">
@@ -230,3 +232,4 @@
         </div>
     </div>
 </div>
+    @endsection

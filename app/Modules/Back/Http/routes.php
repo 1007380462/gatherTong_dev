@@ -12,9 +12,11 @@
 */
 
 Route::group(['prefix' => 'back'], function() {
-	Route::get('/', function() {
-		dd('This is the Back module index page.');
-	});
+	/*Route::controller('/activity','Activity');
+	Route::controller('/organization','Organization');
+	Route::controller('/person','PersonController');
+	Route::controller('/','IndexController');*/
+
 });
 
 /*
@@ -28,6 +30,9 @@ Route::group(['prefix' => 'back'], function() {
 |
 */
 
-Route::group(['prefix' => 'back', 'middleware' => ['web']], function () {
-	//
+Route::group(['prefix' => 'back', 'middleware' => ['auth']], function () {
+	Route::controller('/activity','ActivityController');
+	Route::controller('/organization','OrganizationController');
+	Route::controller('/person','PersonController');
+	Route::controller('/','IndexController');
 });

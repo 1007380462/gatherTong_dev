@@ -24,15 +24,42 @@ return [
     ],
 
     'ses' => [
-        'key'    => env('SES_KEY'),
+        'key' => env('SES_KEY'),
         'secret' => env('SES_SECRET'),
         'region' => 'us-east-1',
     ],
 
     'stripe' => [
-        'model'  => App\User::class,
-        'key'    => env('STRIPE_KEY'),
+        'model' => App\User::class,
+        'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
+    ],
+
+    'weibo' => [
+        'client_id' => env('WEIBO_KEY'),
+        'client_secret' => env('WEIBO_SECRET'),
+        'redirect' => env('WEIBO_REDIRECT_URI'),
+    ],
+
+    'gitlab' => [
+        'client_id' => env('GITLAB_KEY'),
+        'client_secret' => env('GITLAB_SECRET'),
+        'redirect' => env('GITLAB_REDIRECT_URI'),
+    ],
+    'qq' => [
+        'client_id' => env('QQ_KEY'),
+        'client_secret' => env('QQ_SECRET'),
+        'redirect' => env('QQ_REDIRECT_URI'),
+    ],
+    'linkedin' => [
+        'client_id' => env('LINKEDIN_KEY'),
+        'client_secret' => env('LINKEDIN_SECRET'),
+        'redirect' => env('LINKEDIN_REDIRECT_URI'),
+    ],
+    'gitlab' => [
+        'client_id' => env('GITLAB_KEY'),
+        'client_secret' => env('GITLAB_SECRET'),
+        'redirect' => env('GITLAB_REDIRECT_URI'),
     ],
 
 ];

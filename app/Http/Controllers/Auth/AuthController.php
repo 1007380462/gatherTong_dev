@@ -28,6 +28,7 @@ class AuthController extends Controller
      *
      * @return void
      */
+    public static  $third='';
     public function __construct()
     {
         $this->middleware('guest', ['except' => 'getLogout']);
@@ -62,4 +63,28 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+//第三方登录weibo
+    public function weibo() {
+        AuthController::$third='weibo';
+        return \Socialite::with('weibo')->redirect();
+    }
+    public function gitlab(){
+        return \Socialite::with('gitlab')->redirect();
+    }
+    public function qq(){
+        return \Socialite::with('qq')->redirect();
+    }
+    public function linkedin(){
+        return \Socialite::with('linkedin')->redirect();
+    }
+
+    public function callback() {
+        $oauthUser = \Socialite::with(AuthController::$third)->user();
+        var_dump($oauthUser->getId());
+        var_dump($oauthUser->getNickname());//获得昵称
+        var_dump($oauthUser->getName());
+        var_dump($oauthUser->getEmail());
+        var_dump($oauthUser->getAvatar());//获得头像
+    }
+
 }

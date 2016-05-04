@@ -16,3 +16,7 @@ public/js/unslider.js
   public/css/messenger-theme-future.css
   public/css/messenger.css
   public/js/messenger.min.js
+  //前后端公用的功能在app/Http/Controllers/下面写控制器
+  //瀑布流
+public/js/noframework.waypoints.min.js
+

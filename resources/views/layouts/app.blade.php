@@ -25,13 +25,14 @@
         }
     </style>
     {{--javascript--}}
-    <script src="{{URL::asset('/')}}js/jquery-1.8.3.min.js"></script>
+    {{--<script src="{{URL::asset('/')}}js/jquery-1.8.3.min.js"></script>--}}
+    <script src="{{URL::asset('/')}}js/jquery-1.11.1.min.js"></script>
     <script src="{{URL::asset('/')}}js/bootstrap.min.js"></script>
     {{--javascript--}}
 
 </head>
 
-<body id="app-layout">
+<body id="app-layout" >
 <nav class="navbar navbar-default">
     <div class="container">
         <div class="navbar-header">
@@ -60,8 +61,8 @@
             <ul class="nav navbar-nav navbar-right">
                 <!-- Authentication Links -->
                 @if (Auth::guest())
-                    <li><a href="{{ url('/auth/login') }}">Login</a></li>
-                    <li><a href="{{ url('/auth/register') }}">Register</a></li>
+                    <li><a href="{{ url('front/login/login') }}">Login</a></li>
+                    <li><a href="{{ url('front/register/register') }}">Register</a></li>
                 @else
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -80,8 +81,7 @@
 
 @yield('content')
 
-
-<footer class="container">
+<footer class="container ">
     <p>&copy; Company 2012</p>
 </footer>
 

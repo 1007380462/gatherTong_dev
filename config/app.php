@@ -144,9 +144,15 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        Caffeinated\Modules\ModulesServiceProvider::class,
-		Stevenyangecho\UEditor\UEditorServiceProvider::class,
+        SocialiteProviders\Manager\ServiceProvider::class,//laravel的第三方登录实现
+        Caffeinated\Modules\ModulesServiceProvider::class,//模块化的构建
+		Stevenyangecho\UEditor\UEditorServiceProvider::class,//百度富文本编辑器
 
+        Collective\Html\HtmlServiceProvider::class,
+        Laracasts\Flash\FlashServiceProvider::class,
+        Prettus\Repository\Providers\RepositoryServiceProvider::class,
+        \InfyOm\Generator\InfyOmGeneratorServiceProvider::class,
+        \InfyOm\CoreTemplates\CoreTemplatesServiceProvider::class,
     ],
 
     /*
@@ -195,7 +201,13 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
+
         'Module' => Caffeinated\Modules\Facades\Module::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,//可以在controller文件中直接使用的别名
+
+        'Form'      => Collective\Html\FormFacade::class,
+        'Html'      => Collective\Html\HtmlFacade::class,
+        'Flash'    => Laracasts\Flash\Flash::class,
     ],
 
 ];

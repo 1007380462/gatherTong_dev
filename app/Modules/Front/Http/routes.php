@@ -12,8 +12,15 @@
 */
 
 Route::group(['prefix' => 'front'], function() {
-	//Route::get('/index','IndexController@getIndex' );
+	Route::controller('/activity','ActivityController');
+	Route::controller('/login','LoginController');
+	Route::controller('/organization','OrganizationController');
+	Route::controller('/person','PersonController');
+	Route::controller('/register','RegisterController');
+	Route::controller('/tools','ToolsController');
 	Route::controller('/','IndexController');
+
+
 });
 
 /*

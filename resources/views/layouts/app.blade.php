@@ -25,7 +25,8 @@
         }
     </style>
     {{--javascript--}}
-    <script src="{{URL::asset('/')}}js/jquery-1.8.3.min.js"></script>
+    {{--<script src="{{URL::asset('/')}}js/jquery-1.8.3.min.js"></script>--}}
+    <script src="{{URL::asset('/')}}js/jquery-1.11.1.min.js"></script>
     <script src="{{URL::asset('/')}}js/bootstrap.min.js"></script>
     {{--javascript--}}
 

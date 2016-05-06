@@ -82,7 +82,7 @@
 @yield('content')
 
 
-<footer class="container">
+<footer id="foot" class="container">
     <p>&copy; Company 2012</p>
 </footer>
 

@@ -8,7 +8,9 @@ namespace App\Modules\Front\Http\Controllers;
  * Time: 13:10
  */
 use App\Http\Controllers\Controller;
-use Symfony\Component\HttpFoundation\Request;
+
+use App\Models\Activity;
+use Guzzle\Http\Message\Request;
 
 class ActivityController extends Controller{
 
@@ -19,6 +21,7 @@ class ActivityController extends Controller{
     public function getShowActivity(){
          return view('front.activityList');
     }
+
 
     /**
      * 用于无限分页响应

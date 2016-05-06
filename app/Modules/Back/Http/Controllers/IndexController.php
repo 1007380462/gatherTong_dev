@@ -6,8 +6,8 @@ namespace App\Modules\Back\Http\Controllers;
  * Date: 2016/4/28
  * Time: 11:56
  */
-use App\Http\Controllers;
-class IndexController extends Controllers{
+use App\Http\Controllers\Controller;
+class IndexController extends Controller{
     /**
      * web back index page
      */

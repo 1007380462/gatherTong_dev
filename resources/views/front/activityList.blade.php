@@ -148,6 +148,7 @@
         </div>
     </div>
 
+
     {{--瀑布流无限分页,靠近窗口顶部时调用函数handler--}}
     <div id="overflow-scroll" >
         <div id="horizontal-waypoint">Horizontal</div>
@@ -156,13 +157,16 @@
     <script>
 
 
+
         var waypoint = new Waypoint({
             element: document.getElementById('horizontal-waypoint'),
+
             handler: function(direction) {
                 if(direction=='down'){
                     //进行ajax请求获取下一页数据进行渲染
                    //jQuery.post(url,data,success(data, textStatus, jqXHR),dataType)
                      var number=0;
+
                   $.post("{{url('/front/activity/show-activity')}}",{number:number},function(data){
                       if(data==0)
                       return ;

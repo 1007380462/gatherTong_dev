@@ -163,47 +163,43 @@
                     //进行ajax请求获取下一页数据进行渲染
                    //jQuery.post(url,data,success(data, textStatus, jqXHR),dataType)
                      var number=0;
-                  var content = $.post("{{url('/front/activity/show-activity')}}",{number:number});
-                    if(content==null)
-                    return ;
-                  /*  number++;*/
+                  $.post("{{url('/front/activity/show-activity')}}",{number:number},function(data){
+                      if(data==0)
+                      return ;
+                      number++;
+                      /*下面的for循环会对ajax请求有影响，本来是到了底部就会刷新，现在只会刷新一次*/
+                      for(var key in data){
+                          //标题
+                          var node=document.createElement("h2"); //创建一个h2节点
+                          var textnode=document.createTextNode("标题"); //创建一个文本节点内容
+                          node.appendChild(textnode); //将文本节点内容，添加到h2节点里面
+                          document.getElementById("activity_list").appendChild(node); //h2节点，添加到test几点下面
+                          //内容
+                          var node=document.createElement("p");
+                          var textnode=document.createTextNode("本可视化布局程序在HTML5浏览器上运行更加完美,");
+                          node.appendChild(textnode);
+                          document.getElementById("activity_list").appendChild(node);
 
-                    /*下面的for循环会对ajax请求有影响，本来是到了底部就会刷新，现在只会刷新一次*/
-                    for(var key in content){
-                    //标题
-                        var node=document.createElement("h2"); //创建一个h2节点
-                        var textnode=document.createTextNode("标题"); //创建一个文本节点内容
-                        node.appendChild(textnode); //将文本节点内容，添加到h2节点里面
-                        document.getElementById("activity_list").appendChild(node); //h2节点，添加到test几点下面
-                        //内容
-                        var node=document.createElement("p");
-                        var textnode=document.createTextNode("本可视化布局程序在HTML5浏览器上运行更加完美,");
-                        node.appendChild(textnode);
-                        document.getElementById("activity_list").appendChild(node);
+                          //查看更多
+                          var node=document.createElement("p");
+                          var textnode=document.createTextNode("");
+                          node.appendChild(textnode);
+                          document.getElementById("activity_list").appendChild(node);
 
-                        //查看更多
-                        var node=document.createElement("p");
-                        var textnode=document.createTextNode("");
-                        node.appendChild(textnode);
-                        document.getElementById("activity_list").appendChild(node);
-
-                        var node=document.createElement('a');
-                        node.setAttribute('class','btn');
-                        node.setAttribute('href','#');
-                        var textNode=document.createTextNode('查看更多>>');
-                        node.appendChild(textNode);
-                        var lastNode=document.getElementById("activity_list").lastElementChild;
-                        lastNode.appendChild(node);
-                    }
-
+                          var node=document.createElement('a');
+                          node.setAttribute('class','btn');
+                          node.setAttribute('href','#');
+                          var textNode=document.createTextNode('查看更多>>');
+                          node.appendChild(textNode);
+                          var lastNode=document.getElementById("activity_list").lastElementChild;
+                          lastNode.appendChild(node);
+                      }
+                  });
                 }
             },
-
             offset:"bottom-in-view",
             enabled:false,
         });
-
-
 
         function refresh(){
             waypoint.enable();
@@ -213,13 +209,12 @@
         }
 
         function funcTest(){
-            window.setInterval("ad()",300);
+            window.setInterval("ad()",100);
         }
         window.onload=function(){
             refresh();
             funcTest();
         }
-
 
     </script>
     @endsection

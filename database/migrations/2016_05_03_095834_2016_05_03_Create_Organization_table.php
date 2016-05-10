@@ -13,24 +13,11 @@ class CreateOrganizationTable extends Migration
     public function up()
     {
         Schema::create('organization',function(Blueprint $table){
-                    $table->increments('id');
-            $table->string('');
-            $table->index('');
-            $table->timestamps();
-            $table->timestamps();
-            $table->text('');
-            $table->time('');
-            $table->float('');
-            $table->enum('',['','','']);
-            $table->integer('');
-            $table->json('');
-            $table->date('');
-            $table->dateTime('');
-            $table->char('');
-            $table->double('');
-            $table->binary('');
-            $table->boolean('');
-            $table->bigInteger('');
+            $table->increments('id');
+            $table->string('logo')->unique();
+            $table->string('name')->unique();
+            $table->tinyInteger('status');
+            $table->timestamps();//创建create_at update_at
 
         });
 

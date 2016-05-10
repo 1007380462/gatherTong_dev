@@ -12,7 +12,12 @@ class CreateLoginLogTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('loginLog',function(Blueprint $table){
+            $table->increments('id');
+            $table->integer('userId');
+            $table->time('create_at');
+            $table->string('place');
+        });
     }
 
     /**

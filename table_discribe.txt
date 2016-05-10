@@ -1,0 +1,78 @@
+//社团表organization
+create table organization{
+ //id
+ //create_at 创建时间
+ //update_at 最近更新时间
+ //logo logo
+ //name 名称
+ //abstract 简介
+ //status 社团状态，关闭，开启
+
+}
+//社团信息表organizationInfo
+  //id
+  //organization_id
+  //purpose 社团宗旨
+  //create_at
+  //update_at
+  //
+//活动表activity
+name活动名称
+organizationId//活动属于的社团
+startTime//活动开始时间
+endTime
+
+//活动信息表activityInfo
+id
+activityId//属于哪个活动的具体信息
+content//活动内容
+maxNumber//最多参与人数，限制参与的人数
+currentNumber//当前参与人数
+
+//登陆日志loginLog
+id
+userId
+create_at//登陆时间
+place//登陆地点
+
+//用户信息表user
+id
+name  //需要好好考虑
+email  //唯一
+pwd
+sex
+avatar  //头像
+openId  //qq，微博，gitlab,linkedin等第三方平台的openid
+create_at
+update_at
+//使用第三方登录时 先在用户信息表搜索此openId，如果存在就将当前登录用户与此user关联
+//如果没有，去用户第三方登录信息搜索次openId，存在就将当前登录用户与此user关联
+//如果没有就在用户信息表和用户第三方登录信息表中增加一条记录
+//第三方登录验证流程：用户使用第三方登录后就可以使用平台功能，用户使用qq登陆后，
+//下一次使用linkedIn登陆时可以自己在将这些账户关联起来使得系统将其看作
+//同一个用户，将他们的信息保存后使用不同的第三方都可以使用。
+//用户第三方登录信息thirdLogin
+id
+userId
+openId
+thirdPlatform  //第三方平台名称 qq，weibo等。
+
+//用户社团参与表joinOrganization
+id
+userId
+organizationId
+joinTime
+
+//用户活动参与表joinActivity
+id
+userId
+activityId
+joinTime
+//用户社团关注表attentionOrganization
+id
+userId
+organizationId
+attentionTime
+
+
+

@@ -8,6 +8,8 @@ namespace App\Modules\Front\Http\Controllers;
  * Time: 10:36
  */
 use App\Http\Controllers\Controller;
+use Torann\GeoIP\GeoIPFacade;
+
 class IndexController extends Controller
 {
     /**
@@ -17,6 +19,9 @@ class IndexController extends Controller
      */
     public function getIndex()
     {
+
+        $location = GeoIP::getLocation('232.223.11.11');
+        var_dump($location);die;
         return view('front.index');
     }
 

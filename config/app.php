@@ -153,6 +153,9 @@ return [
         Prettus\Repository\Providers\RepositoryServiceProvider::class,
         \InfyOm\Generator\InfyOmGeneratorServiceProvider::class,
         \InfyOm\CoreTemplates\CoreTemplatesServiceProvider::class,
+        SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
+        Maatwebsite\Excel\ExcelServiceProvider::class,
+        Torann\GeoIP\GeoIPServiceProvider::class,
     ],
 
     /*
@@ -202,12 +205,15 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
 
-        'Module' => Caffeinated\Modules\Facades\Module::class,
+        'Module'    => Caffeinated\Modules\Facades\Module::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,//可以在controller文件中直接使用的别名
 
         'Form'      => Collective\Html\FormFacade::class,
-        'Html'      => Collective\Html\HtmlFacade::class,
-        'Flash'    => Laracasts\Flash\Flash::class,
+        'Html'       => Collective\Html\HtmlFacade::class,
+        'Flash'     => Laracasts\Flash\Flash::class,
+        'QrCode'    => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
+        'Excel'     => Maatwebsite\Excel\Facades\Excel::class,
+        'GeoIP'     => Torann\GeoIP\GeoIPFacade::class,
     ],
 
 ];

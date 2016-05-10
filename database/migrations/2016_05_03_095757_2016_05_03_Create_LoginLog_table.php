@@ -27,6 +27,6 @@ class CreateLoginLogTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('loginLog');
     }
 }

@@ -16,6 +16,8 @@ class CreateOrganizationTable extends Migration
             $table->increments('id');
             $table->string('logo')->unique();
             $table->string('name')->unique();
+            $table->integer('amount');
+            $table->string('abstract',128);
             $table->tinyInteger('status');
             $table->timestamps();//创建create_at update_at
 
@@ -38,6 +40,6 @@ class CreateOrganizationTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('organization');
     }
 }

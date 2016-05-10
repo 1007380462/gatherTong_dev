@@ -1,12 +1,13 @@
 //社团表organization
 create table organization{
  //id
- //create_at 创建时间
- //update_at 最近更新时间
  //logo logo
  //name 名称
  //abstract 简介
  //status 社团状态，关闭，开启
+ //amount //社团正式成员额度
+  //create_at 创建时间
+  //update_at 最近更新时间
 
 }
 //社团信息表organizationInfo
@@ -16,7 +17,7 @@ create table organization{
   //create_at
   //update_at
   //
-//活动表activity
+//活动表activity （各社团开展的活动）
 name活动名称
 organizationId//活动属于的社团
 startTime//活动开始时间
@@ -63,16 +64,93 @@ userId
 organizationId
 joinTime
 
-//用户活动参与表joinActivity
+//用户活动参与表joinActivity（记录用户参与了哪些活动）
 id
 userId
 activityId
 joinTime
+
 //用户社团关注表attentionOrganization
 id
 userId
 organizationId
 attentionTime
+
+//社团成员表organizationMem
+id
+organizationId
+userId
+position //职位，使用数字编号替代
+type //正式还是编外
+contribution //贡献度 int
+joinTime
+
+//活动成员表activityMem(不同的活动中成员的职位可以在活动中改变，只在当前活动中有效)
+id
+userId
+activity
+position
+addTime
+
+//社团社区讨论信息 organizationCommunityTheme
+//建立发起讨论的主题
+id
+OrganizationId
+name //主题名称
+userId
+ createTime
+
+//根据主题用户可以进行回复
+//社团社区主题回复信息organizationCommunityReply
+id
+themeId
+userId
+content
+createTime
+
+//综合社区讨论信息 communityTheme
+//建立发起讨论的主题
+id
+userId //发起人id
+name //主题内容
+createTime
+
+//根据主题用户可以进行回复communityThemeReply
+id
+themeId
+userId //回复的用户id
+content
+createTime
+
+//externalActivity
+//（外部活动，平台提供开社团和用户的各种外部信息，活动，讲座等。
+有些需要社团内部才有权利可看，需要一定等级）
+id
+ruleId
+detailId
+amount //名额
+startTime
+endTime
+
+//externalActivityDetail (外部活动具体信息)
+id
+//查看规则，地区>社团>各个社团分配的名额>贡献度大小.
+//externalActivityRule(查看外部活动的规则)
+id
+//externalActivityOrganization(外部活动规则中的社团规则)
+id
+ruleId
+organizationId
+
+
+//用户提建议suggest
+id
+userId
+content
+createTime
+
+
+
 
 
 

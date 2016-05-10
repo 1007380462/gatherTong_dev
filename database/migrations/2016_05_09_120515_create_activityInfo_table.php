@@ -29,6 +29,6 @@ class CreateActivityInfoTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('activityInfo');
     }
 }

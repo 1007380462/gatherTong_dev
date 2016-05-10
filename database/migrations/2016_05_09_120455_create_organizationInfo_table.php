@@ -27,6 +27,6 @@ class CreateOrganizationInfoTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('organizationInfo');
     }
 }

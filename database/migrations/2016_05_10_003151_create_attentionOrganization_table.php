@@ -27,6 +27,6 @@ class CreateAttentionOrganizationTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('attentionOrganization');
     }
 }

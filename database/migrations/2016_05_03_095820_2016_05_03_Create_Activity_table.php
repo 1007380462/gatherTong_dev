@@ -32,6 +32,6 @@ class CreateActivityTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('loginLog');
     }
 }

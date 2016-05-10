@@ -27,6 +27,6 @@ class CreateJoinActivityTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('joinActivity');
     }
 }

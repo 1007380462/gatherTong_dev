@@ -23,8 +23,6 @@
         "laravelcollective/html": "5.1.*",
         "infyomlabs/swagger-generator": "dev-master",
         "jlapp/swaggervel": "dev-master",
-        "doctrine/dbal": "~2.3",
-        "phpunit/phpunit": "^5.3",
 
         "simplesoftwareio/simple-qrcode": "^1.4",
         "maatwebsite/excel": "^2.1",
@@ -36,7 +34,10 @@
     "require-dev": {
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
-        "phpspec/phpspec": "~2.1"
+        "phpspec/phpspec": "~2.1",
+        "doctrine/dbal": "~2.3",
+        "phpunit/phpunit": "^5.3",
+        "barryvdh/laravel-debugbar": "^2.0"
     },
     "autoload": {
         "classmap": [

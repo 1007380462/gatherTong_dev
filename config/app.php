@@ -158,6 +158,7 @@ return [
         Maatwebsite\Excel\ExcelServiceProvider::class,
         Torann\GeoIP\GeoIPServiceProvider::class,
         Mews\Captcha\CaptchaServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
     ],
 
     /*
@@ -217,6 +218,7 @@ return [
         'Excel'     => Maatwebsite\Excel\Facades\Excel::class,
         'GeoIP'     => Torann\GeoIP\GeoIPFacade::class,
         'Captcha' => Mews\Captcha\Facades\Captcha::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
     ],
 
 ];

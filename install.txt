@@ -20,6 +20,8 @@ public/js/unslider.js
   //前后端公用的功能在app/Http/Controllers/下面写控制器
   //瀑布流
 public/js/noframework.waypoints.min.js
+//调试工具
+composer require barryvdh/laravel-debugbar*https://github.com/barryvdh/laravel-debugbar
 
 Laravel Permission – 分配用户角色对应权限（Laravel 5.1.11）
 Laravel Roles – 处理角色及权限的包（Laravel 5）

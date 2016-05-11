@@ -8,8 +8,7 @@ namespace App\Modules\Front\Http\Controllers;
  * Time: 13:10
  */
 use GuzzleHttp\Psr7\Request;
-use Stevenyangecho\UEditor\Controller;
-
+use App\Http\Controllers\Controller;
 class PersonController extends Controller
 {
 

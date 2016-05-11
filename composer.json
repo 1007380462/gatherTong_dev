@@ -17,7 +17,6 @@
 
         "intervention/image": "^2.3",
 
-        "stevenyangecho/laravel-u-editor": "^1.3",
 
         "infyomlabs/laravel-generator": "dev-master",
         "infyomlabs/core-templates": "dev-master",
@@ -29,8 +28,10 @@
 
         "simplesoftwareio/simple-qrcode": "^1.4",
         "maatwebsite/excel": "^2.1",
-        "torann/geoip": "^0.2.2"
 
+        "torann/geoip": "^0.2.2",
+        "stevenyangecho/laravel-u-editor": "^1.3",
+        "mews/captcha": "^2.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

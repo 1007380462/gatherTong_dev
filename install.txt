@@ -25,24 +25,22 @@ Laravel Permission – 分配用户角色对应权限（Laravel 5.1.11）
 Laravel Roles – 处理角色及权限的包（Laravel 5）
 Defender – 基于角色&权限的访问控制列表（ACL）解决方案（Laravel 5）
 Entrust – 基于角色的权限系统（Laravel 5）
-Captcha – Laravel 5 验证码生成器
+Captcha – Laravel 5 验证码生成器*https://github.com/mewebstudio/captcha
 Intervention Image – 图片处理库（创建、编辑、压缩图片）*
-Laravel 5 UEditor – 百度编辑器集成到Laravel5（支持七牛云存储）*
+Laravel 5 UEditor – 百度编辑器集成到Laravel5（支持七牛云存储）*https://github.com/stevenyangecho/laravel-u-editor
 Laravel Administrator – Laravel后台管理http://administrator.frozennode.com/docs/fields
 //laravel-emoji – Laravel表情扩展包.百度编辑器中带有表情标签。
 Laravel Excel – 导入导出Excel和CSV文件*http://www.maatwebsite.nl/laravel-excel/docs/getting-started#installation
 Laravel Friendships – 让Eloquent模型插上管理朋友关系的翅膀
 Laravel GeoIP – 基于网站访问用户的IP地址判断其地理位置*http://lyften.com/projects/laravel-geoip/
-Laravel Messenger – 在Laravel中创建用户消息系统
+Laravel Messenger – 在Laravel中创建用户消息系统//使用不方便
 Laravel Repositories – 在Laravel中使用Repository模式实现业务逻辑与数据访问的分离
 Laravel Snappy – 使用wkhtmltopdf将HTML转化为PDF生成器
 Laravel Stats Tracker – 从请求中收集信息以验证和存储
-Recaptcha – 验证码校验器（Laravel 5）
 Simple QrCode – Laravel二维码生成器*https://www.simplesoftware.io/docs/simple-qrcode/zh
 Teamwork – 在一个邀请系统中用户与小组的关联
 Laravel 5 Modules – Laravel 5 中实现模块化开发*
-Laravel GitHub – 连接 PHP GitHub API
-Laravel GitLab – 连接 GitLab API
+
 
 
 

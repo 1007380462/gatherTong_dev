@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    @include('UEditor::head')
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>gatherTong</title>
+    <title>GT</title>
 
     <!-- Fonts -->
     <link href="{{URL::asset('/')}}css/font-awesome.min.css" rel='stylesheet' type='text/css'>
@@ -29,6 +30,9 @@
     <script src="{{URL::asset('/')}}js/jquery-1.11.1.min.js"></script>
     <script src="{{URL::asset('/')}}js/bootstrap.min.js"></script>
     {{--javascript--}}
+
+
+
 
 </head>
 

@@ -9,11 +9,28 @@
     /*margin-left: auto;*/
     }
     </style>
+
+    <!-- 加载编辑器的容器 -->
+    <script id="container" name="content" type="text/plain">
+    ssdadasd
+</script>
+
+    <!-- 实例化编辑器 -->
+    <script type="text/javascript">
+        var ue = UE.getEditor('container');
+        ue.ready(function() {
+            /*ue.execCommand('serverparam', '_token', '{{ csrf_token() }}');//此处为支持laravel5 csrf ,根据实际情况修改,目的就是设置 _token 值.*/
+            ue.execCommand('serverparam');
+        });
+    </script>
+
+
     <div class="container-fluid">
         <div class="row-fluid">
             <div class="span4">
             </div>
             <div class="span4 container">
+                {{--{!! QrCode::generate('wumengrong is you god')!!}--}}
                 <h2>
                     标题
                 </h2>

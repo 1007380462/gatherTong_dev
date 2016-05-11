@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Shanghai',
 
     /*
     |--------------------------------------------------------------------------
@@ -144,9 +144,10 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        SocialiteProviders\Manager\ServiceProvider::class,//laravel的第三方登录实现
-        Caffeinated\Modules\ModulesServiceProvider::class,//模块化的构建
-		Stevenyangecho\UEditor\UEditorServiceProvider::class,//百度富文本编辑器
+        SocialiteProviders\Manager\ServiceProvider::class,
+        Caffeinated\Modules\ModulesServiceProvider::class,
+
+        Stevenyangecho\UEditor\UEditorServiceProvider::class,
 
         Collective\Html\HtmlServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
@@ -156,6 +157,7 @@ return [
         SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
         Torann\GeoIP\GeoIPServiceProvider::class,
+        Mews\Captcha\CaptchaServiceProvider::class,
     ],
 
     /*
@@ -214,6 +216,7 @@ return [
         'QrCode'    => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
         'Excel'     => Maatwebsite\Excel\Facades\Excel::class,
         'GeoIP'     => Torann\GeoIP\GeoIPFacade::class,
+        'Captcha' => Mews\Captcha\Facades\Captcha::class,
     ],
 
 ];

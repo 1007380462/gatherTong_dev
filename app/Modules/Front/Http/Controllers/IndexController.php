@@ -9,6 +9,8 @@ namespace App\Modules\Front\Http\Controllers;
  */
 use App\Http\Controllers\Controller;
 use App\User;
+use Mews\Captcha\Facades\Captcha;
+use Qiniu\Http\Request;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use Torann\GeoIP\GeoIPFacade as GeoIP;
 
@@ -21,6 +23,7 @@ class IndexController extends Controller
      */
     public function getIndex()
     {
+        //return Captcha::create('default');//创建验证码
      //   QrCode::generate('make me into a QrCode',public_path().'/qrcode.svg');
         $location = GeoIP::getLocation('202.108.22.103');//getLocation的参数可有可无。
        /* array(
@@ -62,6 +65,26 @@ class IndexController extends Controller
                 $sheet->fromArray($data, null, 'A1', false, false);
             });
         })->download('xls');
+    }
+
+    /**
+     * 生成验证码
+     */
+    public function getCaptcha(){
+        return Captcha::create('default');
+    }
+
+    /**
+     * 验证
+     */
+    public function postCheckCaptcha(Request $request){
+        $cpt=$request->input('cpt');
+        //$bool=Captcha::check($cpt);
+        $bool=true;
+        if(empty($bool)){
+            var_dump('the result of check captcha is fail');
+        }
+        var_dump('the result of check captcha is success');
     }
 
 }

@@ -159,6 +159,7 @@ return [
         Torann\GeoIP\GeoIPServiceProvider::class,
         Mews\Captcha\CaptchaServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
+        PragmaRX\Tracker\Vendor\Laravel\ServiceProvider::class,
     ],
 
     /*
@@ -219,6 +220,7 @@ return [
         'GeoIP'     => Torann\GeoIP\GeoIPFacade::class,
         'Captcha' => Mews\Captcha\Facades\Captcha::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Tracker' => PragmaRX\Tracker\Vendor\Laravel\Facade::class,
     ],
 
 ];

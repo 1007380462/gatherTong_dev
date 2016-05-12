@@ -63,6 +63,17 @@ return [
             'prefix'    => '',
             'strict'    => false,
         ],
+        'tracker'=>[
+            'driver'    => 'mysql',
+            'host'      => '192.168.1.101',
+            'database'  =>'tracker',
+            'username'  => 'wmr',
+            'password'  => '123456',
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => '',
+            'strict'    => false,
+        ],
 
         'pgsql' => [
             'driver'   => 'pgsql',

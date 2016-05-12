@@ -33,6 +33,11 @@
                 {{--{!! QrCode::generate('wumengrong is you god')!!}--}}
                 <h2>
                     标题
+                    <form action="{{ url('front/check-captcha') }}" method="post">
+                        <input type="text" name="cpt" value="" />
+                      <img src="{{ url('front/captcha') }}" onclick="this.src='{{ url('front/captcha') }}?r='+Math.random();" alt="">
+                    <input type="submit" value="Submit" />
+                    </form>
                 </h2>
                 <p>
                     本可视化布局程序在HTML5浏览器上运行更加完美, 能实现自动本地化保存, 即使关闭了网页, 下一次打开仍然能恢复上一次的操作.

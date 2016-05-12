@@ -38,7 +38,8 @@ Laravel GeoIP – 基于网站访问用户的IP地址判断其地理位置*http:
 Laravel Messenger – 在Laravel中创建用户消息系统//使用不方便
 Laravel Repositories – 在Laravel中使用Repository模式实现业务逻辑与数据访问的分离
 Laravel Snappy – 使用wkhtmltopdf将HTML转化为PDF生成器
-Laravel Stats Tracker – 从请求中收集信息以验证和存储
+Laravel Stats Tracker – 从请求中收集信息以验证和存储 需要安装geoip2/geoip2（两个都安装了）*
+https://github.com/antonioribeiro/tracker,http://startbootstrap.com/template-overviews/sb-admin-2/
 Simple QrCode – Laravel二维码生成器*https://www.simplesoftware.io/docs/simple-qrcode/zh
 Teamwork – 在一个邀请系统中用户与小组的关联
 Laravel 5 Modules – Laravel 5 中实现模块化开发*

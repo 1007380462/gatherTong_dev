@@ -34,7 +34,7 @@ class Stats extends Controller
 
 	public function index()
 	{
-        if ( ! $this->isAuthenticated())
+      /*  if ( ! $this->isAuthenticated())
         {
             return View::make('pragmarx/tracker::message')->with('message', 'Authentication required');
         }
@@ -47,7 +47,7 @@ class Stats extends Controller
         if ( ! $this->isAdmin())
         {
             return View::make('pragmarx/tracker::message')->with('message', 'You are not Admin');
-        }
+        }*/
 
 		return $this->showPage(Session::get('tracker.stats.page'));
 	}

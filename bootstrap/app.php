@@ -51,5 +51,16 @@ $app->singleton(
 | from the actual running of the application and sending responses.
 |
 */
+/*
+ * change place of storing log
+ *
+ */
+/*$app->configureMonologUsing(function($monolog){
+    $monolog->pushHandler(new \Monolog\Handler\StreamHandler('path'),\Monolog\Logger::WARNING);
+
+});
+$app->configureMonologUsing(function($monolog){
+    $monolog->pushHandler(new \Monolog\Handler\StreamHandler('/home/wumengrong/ylc_mall_admin/storage/logs/wmr2.log',\Monolog\Logger::ALERT));
+});*/
 
 return $app;

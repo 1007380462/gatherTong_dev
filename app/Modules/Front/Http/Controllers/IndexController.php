@@ -9,6 +9,7 @@ namespace App\Modules\Front\Http\Controllers;
  */
 use App\Http\Controllers\Controller;
 use App\User;
+use Illuminate\Routing\Route;
 use Mews\Captcha\Facades\Captcha;
 use Qiniu\Http\Request;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
@@ -23,6 +24,15 @@ class IndexController extends Controller
      */
     public function getIndex()
     {
+       /* Log::emergency($error);     //紧急状况，比如系统挂掉
+        Log::alert($error);     //需要立即采取行动的问题，比如整站宕掉，数据库异常等，这种状况应该通过短信提醒
+        Log::critical($error);     //严重问题，比如：应用组件无效，意料之外的异常
+        Log::error($error);     //运行时错误，不需要立即处理但需要被记录和监控
+        Log::warning($error);    //警告但不是错误，比如使用了被废弃的API
+        Log::notice($error);     //普通但值得注意的事件
+        Log::info($error);     //感兴趣的事件，比如登录、退出
+        Log::debug($error);     //详细的调试信息*/
+
         //return Captcha::create('default');//创建验证码
      //   QrCode::generate('make me into a QrCode',public_path().'/qrcode.svg');
         $location = GeoIP::getLocation('202.108.22.103');//getLocation的参数可有可无。

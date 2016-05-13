@@ -5,7 +5,7 @@ namespace PragmaRX\Tracker\Vendor\Laravel\Models;
 class Referer extends Base {
 
 	protected $table = 'tracker_referers';
-
+	public $connection='tracker';
 	protected $fillable = array(
 		'url',
 		'host',

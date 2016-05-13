@@ -5,7 +5,7 @@ namespace PragmaRX\Tracker\Vendor\Laravel\Models;
 class Event extends Base {
 
 	protected $table = 'tracker_events';
-
+	public $connection='tracker';
 	protected $fillable = array(
 		'name',
 	);

@@ -5,7 +5,7 @@ namespace PragmaRX\Tracker\Vendor\Laravel\Models;
 class RoutePath extends Base {
 
 	protected $table = 'tracker_route_paths';
-
+	public $connection='tracker';
 	protected $fillable = array(
 		'route_id',
 		'path',

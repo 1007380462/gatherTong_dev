@@ -5,7 +5,7 @@ namespace PragmaRX\Tracker\Vendor\Laravel\Models;
 class GeoIp extends Base {
 
 	protected $table = 'tracker_geoip';
-
+	public $connection='tracker';
 	protected $fillable = array(
 		'country_code',
 		'country_code3',

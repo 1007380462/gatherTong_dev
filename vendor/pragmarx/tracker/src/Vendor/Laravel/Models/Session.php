@@ -5,7 +5,7 @@ namespace PragmaRX\Tracker\Vendor\Laravel\Models;
 class Session extends Base {
 
 	protected $table = 'tracker_sessions';
-
+	public $connection='tracker';
 	protected $fillable = array(
 		'uuid',
 		'user_id',

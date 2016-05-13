@@ -5,7 +5,7 @@ namespace PragmaRX\Tracker\Vendor\Laravel\Models;
 class Device extends Base {
 
 	protected $table = 'tracker_devices';
-
+	public $connection='tracker';
 	protected $fillable = array(
 		'kind',
 		'model',

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model as Eloquent;
 class Base extends Eloquent {
 
 	protected $hidden = ['config'];
-
+	public $connection='tracker';
 	private $config;
 
 	public function __construct(array $attributes = array())

@@ -25,6 +25,22 @@ Route::get('auth/gitlab', 'Auth\AuthController@gitlab');
 Route::get('auth/callback', 'Auth\AuthController@callback');
 
 
+/*Route::group(['prefix' => 'stats/api', 'middleware' => 'tracker'], function() {
+
+    Route::get('/', 'TrackerController@index');
+
+    Route::controller('orders', 'OrderController');
+});*/
+
+Route::get('/stats/api/errors','TrackerController@apierrors');
+Route::get('/stats/api/log','TrackerController@apilog');
+Route::get('/stats/api/visits','TrackerController@apivisits');
+Route::get('/stats/api/users','TrackerController@apiusers');
+Route::get('/stats/api/events','TrackerController@apievents');
+Route::get('/stats/api/pageviews','TrackerController@apipageviews');
+Route::get('/stats/api/pageviewsbycountry','TrackerController@apipageviewsbycountry');
+
+
 Route::get('/', function () {
     return view('welcome');
 });

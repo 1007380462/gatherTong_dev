@@ -5,7 +5,7 @@ namespace PragmaRX\Tracker\Vendor\Laravel\Models;
 class Log extends Base {
 
 	protected $table = 'tracker_log';
-
+	public $connection='tracker';
 	protected $fillable = array(
 		'session_id',
 		'method',

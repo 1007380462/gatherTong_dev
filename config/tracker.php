@@ -143,22 +143,22 @@ return [
 	 *     sudo apt-get purge php5-geoip
 	 *
 	 */
-	'log_geoip' => false,
+	'log_geoip' => true,
 
 	/**
 	 * Do you wish to log the user agent?
 	 */
-	'log_user_agents' => false,
+	'log_user_agents' => true,
 
 	/**
 	 * Do you wish to log your users?
 	 */
-	'log_users' => false,
+	'log_users' => true,
 
 	/**
 	 * Do you wish to log devices?
 	 */
-	'log_devices' => false,
+	'log_devices' => true,
 
 	/**
 	 * Do you wish to log HTTP referers?
@@ -168,7 +168,7 @@ return [
 	/**
 	 * Do you wish to log url paths?
 	 */
-	'log_paths' => false,
+	'log_paths' => true,
 
 	/**
 	 * Do you wish to log url queries and query arguments?

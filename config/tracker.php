@@ -5,7 +5,7 @@ return [
 	/**
 	 * Enable it?
 	 */
-	'enabled' => true,
+	'enabled' => false,
 
 	/**
 	 * Robots should be tracked?
@@ -54,7 +54,7 @@ return [
 	 *    - Error log
 	 *    - URL queries (including values)
 	 */
-	'log_enabled' => true,
+	'log_enabled' => false,
 
 	/**
 	 * Log SQL queries?
@@ -143,7 +143,7 @@ return [
 	 *     sudo apt-get purge php5-geoip
 	 *
 	 */
-	'log_geoip' => true,
+	'log_geoip' => false,
 
 	/**
 	 * Do you wish to log the user agent?

@@ -20,19 +20,15 @@
         body {
             font-family: 'Lato';
         }
-
         .fa-btn {
             margin-right: 6px;
         }
     </style>
     {{--javascript--}}
     {{--<script src="{{URL::asset('/')}}js/jquery-1.8.3.min.js"></script>--}}
-    <script src="{{URL::asset('/')}}js/jquery-1.11.1.min.js"></script>
-    <script src="{{URL::asset('/')}}js/bootstrap.min.js"></script>
+    <script src="{{URL::asset('/')}}js/jquery-1.11.1.min.js?version=01"></script>
+    <script src="{{URL::asset('/')}}js/bootstrap.min.js?version=01"></script>
     {{--javascript--}}
-
-
-
 
 </head>
 
@@ -60,7 +56,12 @@
             <ul class="nav navbar-nav">
                 <li><a href="{{ url('/home') }}">Home</a></li>
             </ul>
-
+            <ul class="nav navbar-nav">
+                <li><a href="{{ url('front/activity/show-activity') }}">Activity</a></li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <li><a href="{{ url('front/organization/show-organization') }}">Organization</a></li>
+            </ul>
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
                 <!-- Authentication Links -->
@@ -85,10 +86,8 @@
 
 @yield('content')
 
-
 <footer class="container ">
     <p>&copy; Company 2012</p>
 </footer>
-
 </body>
 </html>

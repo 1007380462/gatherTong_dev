@@ -63,9 +63,10 @@ return [
             'prefix'    => '',
             'strict'    => false,
         ],
+
         'tracker'=>[
             'driver'    => 'mysql',
-            'host'      => '192.168.1.101',
+            'host'      => env('DB_HOST', 'localhost'),
             'database'  =>'tracker',
             'username'  => 'wmr',
             'password'  => '123456',

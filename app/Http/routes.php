@@ -40,7 +40,7 @@ Route::get('/stats/api/events','TrackerController@apievents');
 Route::get('/stats/api/pageviews','TrackerController@apipageviews');
 Route::get('/stats/api/pageviewsbycountry','TrackerController@apipageviewsbycountry');
 
-
+Route::controller('/stats','TrackerController');
 Route::get('/', function () {
     return view('welcome');
 });

@@ -9,6 +9,7 @@ public/js/unslider.js
  //时间日期选择
   public/js/bootstrap-datetimepicker.min.js
   public/js/bootstrap-datetimepicker.zh-CN.js
+  //
   //响应式导航，bootstrap默认支持响应式布局。
   public/css/responsive-nav.css
   public/js/responsive-nav.min.js
@@ -19,9 +20,14 @@ public/js/unslider.js
 
   //前后端公用的功能在app/Http/Controllers/下面写控制器
   //瀑布流
-public/js/noframework.waypoints.min.js
+public/js/noframework.waypoints.min.js activityList.blade.php
+//图片裁剪网站。Image Cropper（jquery名称）https://fengyuanchen.github.io/cropper/
+https://github.com/fengyuanchen/cropper
 //调试工具
-composer require barryvdh/laravel-debugbar*https://github.com/barryvdh/laravel-debugbar
+composer require barryvdh/laravel-debugbar * https://github.com/barryvdh/laravel-debugbar
+//时间选择器
+public/js/YMDClass.js * activityCreate.blade.php
+
 
 Laravel Permission – 分配用户角色对应权限（Laravel 5.1.11）
 Laravel Roles – 处理角色及权限的包（Laravel 5）

@@ -31,6 +31,22 @@ class OrganizationController extends Controller{
         return view('front.organization');
     }
 
+    /**
+     * 创建社团
+     *
+     * @param Request $request
+     */
+    public function getCreateOrganization(Request $request){
+        return view('front.organizationCreate');
+    }
 
+    /**
+     * 编辑社团信息
+     *
+     * @param Request $request
+     */
+    public function editOrganization(Request $request){
+
+    }
 
 }

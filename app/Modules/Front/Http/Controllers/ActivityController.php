@@ -10,8 +10,7 @@ namespace App\Modules\Front\Http\Controllers;
 use App\Http\Controllers\Controller;
 
 use App\Models\Activity;
-use Guzzle\Http\Message\Request;
-
+use Illuminate\Support\Facades\Request;
 class ActivityController extends Controller{
 
     /**
@@ -23,6 +22,14 @@ class ActivityController extends Controller{
     }
 
 
+    /**
+     * 创建活动
+     *
+     * @param Request $request
+     */
+    public function getCreateActivity(Request $request){
+        return view('front.activityCreate');
+    }
     /**
      * 用于无限分页响应
      * @param Request $request

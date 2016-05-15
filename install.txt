@@ -49,7 +49,10 @@ https://github.com/antonioribeiro/tracker,http://startbootstrap.com/template-ove
 Simple QrCode – Laravel二维码生成器*https://www.simplesoftware.io/docs/simple-qrcode/zh
 Teamwork – 在一个邀请系统中用户与小组的关联
 Laravel 5 Modules – Laravel 5 中实现模块化开发*
+PHP Vars to JavaScript Transformer – 在JavaScript中处理来自服务器端的字符串、数组、集合以及其它数据结构的数据
 
+https://github.com/proengsoft/laravel-jsvalidation/wiki/Installation
+Javascript Validation – 使用验证规则、消息、表单请求和验证器在客户端验证表单而不需要编写任何JavaScript代码*
 
 
 

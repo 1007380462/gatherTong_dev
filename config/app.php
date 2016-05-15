@@ -160,6 +160,7 @@ return [
         Mews\Captcha\CaptchaServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         PragmaRX\Tracker\Vendor\Laravel\ServiceProvider::class,
+        Proengsoft\JsValidation\JsValidationServiceProvider::class,
     ],
 
     /*
@@ -221,6 +222,7 @@ return [
         'Captcha' => Mews\Captcha\Facades\Captcha::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Tracker' => PragmaRX\Tracker\Vendor\Laravel\Facade::class,
+        'JsValidator' => Proengsoft\JsValidation\Facades\JsValidatorFacade::class,
     ],
 
 ];

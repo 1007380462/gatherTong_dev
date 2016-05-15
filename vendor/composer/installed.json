@@ -6411,5 +6411,66 @@
             "user agent",
             "visitor"
         ]
+    },
+    {
+        "name": "proengsoft/laravel-jsvalidation",
+        "version": "v1.3.1",
+        "version_normalized": "1.3.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/proengsoft/laravel-jsvalidation.git",
+            "reference": "d659e05837a705b55c8bfe1e54eee0b93c7ccf11"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://packagist.phpcomposer.com/files/proengsoft/laravel-jsvalidation/d659e05837a705b55c8bfe1e54eee0b93c7ccf11.zip",
+            "reference": "d659e05837a705b55c8bfe1e54eee0b93c7ccf11",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/config": "~5.0",
+            "illuminate/contracts": "~5.0",
+            "illuminate/http": "~5.0",
+            "illuminate/support": "~5.0",
+            "illuminate/validation": "~5.0",
+            "illuminate/view": "~5.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "mockery/mockery": "0.9.*",
+            "phpunit/phpunit": "~4.0"
+        },
+        "time": "2016-01-04 00:23:38",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Proengsoft\\JsValidation\\": "src",
+                "Proengsoft\\JsValidation\\Tests\\": "tests"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Albert Moreno",
+                "email": "albert@memorylimit.net",
+                "homepage": "http://memorylimit.net",
+                "role": "DevOps"
+            }
+        ],
+        "description": "Validate forms transparently with Javascript reusing your Laravel Validation Rules, Messages, and FormRequest",
+        "homepage": "https://github.com/proengsoft/laravel-jsvalidation",
+        "keywords": [
+            "form",
+            "javascript",
+            "jquery",
+            "laravel",
+            "proengsoft",
+            "validation",
+            "validator"
+        ]
     }
 ]

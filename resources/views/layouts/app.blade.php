@@ -30,6 +30,9 @@
     <script src="{{URL::asset('/')}}js/bootstrap.min.js?version=01"></script>
     {{--javascript--}}
 
+    <!-- Laravel Javascript Validation -->
+    <script type="text/javascript" src="{{ URL::asset('/')}}vendor/jsvalidation/js/jsvalidation.js"></script>
+
 </head>
 
 <body id="app-layout" >

@@ -339,4 +339,6 @@
         </div>
 
     </form>
+    {{--表单的客户端验证，需要后端配合，formRequest的第一个参数就是后台的一个验证规则文件--}}
+    {!! JsValidator::formRequest('App\Http\Requests\OrganizationCreateForm') !!}
 @endsection

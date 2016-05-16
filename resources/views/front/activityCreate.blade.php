@@ -21,7 +21,7 @@
         <legend class="" style="margin-left: 100px;">创建活动</legend>
     </div>
 
-    <form class="form-horizontal" role="form" action="{{url('seller/edit')}}" method="post"
+    <form id="activity_create" class="form-horizontal" role="form" action="{{url('seller/edit')}}" method="post"
           enctype="multipart/form-data">
         <fieldset>
             @if(count($errors)>0)
@@ -338,4 +338,7 @@
         </div>
 
     </form>
+    {{--表单的客户端验证，需要后端配合，formRequest的第一个参数就是后台的一个验证规则文件--}}
+    {!! JsValidator::formRequest('App\Http\Requests\ActivityCreateForm') !!}
+
 @endsection

@@ -1,21 +1,12 @@
 @extends('layouts.app')
+@include('layouts.time')
+@include('layouts.UEditor')
 @section('content')
 
-    <script type="text/javascript" src="{{URL::asset('/')}}js/YMDClass.js?version=01"></script>
-    <script type="text/javascript" src="{{URL::asset('/')}}js/time/laydate.js?version=01"></script>
+    @yield('time-day-js')
+    @yield('time-second-js')
        {{--time--}}
-    <style type="text/css">
-        *{margin:0;padding:0;list-style:none;}
-        html{background-color:#E3E3E3; font-size:14px; color:#000; font-family:'微软雅黑'}
-        h2{line-height:30px; font-size:20px;}
-        a,a:hover{ text-decoration:none;}
-        pre{font-family:'微软雅黑'}
-        .box{width:970px; padding:10px 20px; background-color:#fff; margin:10px auto;}
-        .box a{padding-right:20px;}
-        .demo1,.demo2,.demo3,.demo4,.demo5,.demo6{margin:25px 0;}
-        h3{margin:10px 0;}
-        .layinput{height: 22px;line-height: 22px;width: 150px;margin: 0;}
-    </style>
+    @yield('time-day-css')
 
     <div id="legend" class="">
         <legend class="" style="margin-left: 100px;">创建活动</legend>
@@ -232,25 +223,10 @@
              {{--时间选择精确到天--}}
             <div class="form-group">
                 <label for="lastname" class="col-sm-2 control-label">开始时间</label>
-
-                <div class="col-md-6">
-                    <div class="col-md-2"><select name="start_year" class="form-control col-md-2"></select></div>
-                    <div class="col-md-2"><select name="start_month" class="form-control col-md-2"></select></div>
-                    <div class="col-md-2"><select name="start_day" class="form-control col-md-2"></select></div>
-                    <script>
-                        //new YMDselect('year1','month1');
-                        //new YMDselect('year1','month1',1990);
-                        //new YMDselect('year1','month1',1990,2);
-                        //new YMDselect('year1','month1','day1');
-                        new YMDselect('start_year', 'start_month', 'start_day');
-                        //new YMDselect('year1','month1','day1',1990,2);
-                        //new YMDselect('year1','month1','day1',1990,2,10);
-                    </script>
-                </div>
+                @yield('time-day')
             </div>
             <div class="form-group">
                 <label for="lastname" class="col-sm-2 control-label">结束时间</label>
-
                 <div class="col-md-6">
                     <div class="col-md-2"><select name="end_year" class="form-control col-md-2"></select></div>
                     <div class="col-md-2"><select name="end_month" class="form-control col-md-2"></select></div>
@@ -268,16 +244,7 @@
             </div>
 
                {{--时间选择精确到秒--}}
-            <div class="form-group">
-                    <!-- Text input-->
-                    <label for="lastname" class="col-sm-2 control-label">时间</label>
-                    <div class="col-md-2">
-                        <div class="demo2">
-                            <input name="time" class="laydate-icon" onClick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})">
-                        </div>
-
-                    </div>
-                </div>
+                @yield('time-second')
 
             {{--活动地址--}}
             <div class="form-group">
@@ -301,28 +268,7 @@
             <div class="form-group">
                 <label for="lastname" class="col-sm-2 control-label">具体内容</label>
                 <div class="col-md-8">
-                    <!-- 加载编辑器的容器 -->
-                    <script id="container" name="content" type="text/plain">
-                    </script>
-                    <!-- 实例化编辑器 -->
-                    <script type="text/javascript">
-                        var ue = UE.getEditor('container', {
-                            toolbars: [[
-                                'undo', 'redo', '|', 'bold', 'italic', 'underline', '|', 'forecolor', '|', 'paragraph',
-                                'fontfamily', 'fontsize', '|', 'directionalityltr', 'directionalityrtl', '|', 'justifyleft',
-                                'justifycenter', 'justifyright', 'justifyjustify', '|', 'touppercase', 'tolowercase', '|',
-                                'link', 'unlink', '|', 'imagenone', 'imageleft', 'imageright', 'imagecenter', '|',
-                                'simpleupload', 'insertimage', 'emotion', 'scrawl', 'map', 'insertcode', 'pagebreak', '|',
-                                'inserttable', 'deletetable', 'insertrow', 'deleterow', 'insertcol', 'deletecol',
-                                'mergeright', 'mergedown', '|', 'preview',
-                            ]]
-                        });
-                        ue.ready(function () {
-                            /*ue.execCommand('serverparam', '_token', 'csrf_token()');*/
-                            //此处为支持laravel5 csrf ,根据实际情况修改,目的就是设置 _token 值.
-                            ue.execCommand('serverparam');
-                        });
-                    </script>
+                 @yield('UEditor')
                 </div>
             </div>
 

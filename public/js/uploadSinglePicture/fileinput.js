@@ -199,10 +199,12 @@
             '       {previewFileIcon}\n' +
             '   </div>',
         defaultFileActionSettings = {
-            removeIcon: '<i class="glyphicon glyphicon-trash text-danger"></i>',
+            //removeIcon: '<i class="glyphicon glyphicon-trash text-danger"></i>',
+            removeIcon: '<i class="glyphicon  text-danger"></i>',
             removeClass: 'btn btn-xs btn-default',
             removeTitle: 'Remove file',
-            uploadIcon: '<i class="glyphicon glyphicon-upload text-info"></i>',
+            //uploadIcon: '<i class="glyphicon glyphicon-upload text-info"></i>',
+            uploadIcon: '<i class="glyphicon text-info"></i>',
             uploadClass: 'btn btn-xs btn-default',
             uploadTitle: 'Upload file',
             indicatorNew: '<i class="glyphicon glyphicon-hand-down text-warning"></i>',
@@ -233,10 +235,10 @@
             '    </div>\n' +
             '    <div class="clearfix"></div>' +
             '    <div class="file-preview-status text-center text-success"></div>\n' +
-            '    <div class="kv-fileinput-error"></div>\n' +
+         /*   '    <div class="kv-fileinput-error"></div>\n' +*/
             '    </div>\n' +
             '</div>',
-        tIcon = '<span class="glyphicon glyphicon-file kv-caption-icon"></span>',
+        tIcon = '<span class="glyphicon  kv-caption-icon"></span>',
         tCaption = '<div tabindex="-1" class="form-control file-caption {class}">\n' +
             '   <span class="file-caption-ellipsis">&hellip;</span>\n' +
             '   <div class="file-caption-name"></div>\n' +
@@ -1308,8 +1310,14 @@
                 }
             };
             fnSuccess = function (data, textStatus, jqXHR) {
+               //传递单个文件成功是调用这个函数，data是后端传递的值,2016/6/1-wmr
+                var pictureName=data['pictureId'];
+                $('#singlePicture-two').html(pictureName);
+
                 outData = self.getOutData(jqXHR, data);
+                console.dir(outData);
                 params = $.extend(params, outData);
+                console.dir(params);
                 setTimeout(function () {
                     if (data.error === undefined) {
                         setIndicator('indicatorSuccess', 'indicatorSuccessTitle');
@@ -2085,13 +2093,13 @@
         previewSettings: defaultPreviewSettings,
         fileTypeSettings: defaultFileTypeSettings,
         previewFileIcon: '<i class="glyphicon glyphicon-file"></i>',
-        browseIcon: '<i class="glyphicon glyphicon-folder-open"></i> &nbsp;',
+        browseIcon: '<i class="glyphicon "></i> &nbsp;',
         browseClass: 'btn btn-primary',
-        removeIcon: '<i class="glyphicon glyphicon-trash"></i> ',
+        removeIcon: '<i class="glyphicon "></i> ',
         removeClass: 'btn btn-default',
         cancelIcon: '<i class="glyphicon glyphicon-ban-circle"></i> ',
         cancelClass: 'btn btn-default',
-        uploadIcon: '<i class="glyphicon glyphicon-upload"></i> ',
+        uploadIcon: '<i class="glyphicon "></i> ',
         uploadClass: 'btn btn-default',
         uploadUrl: null,
         uploadAsync: true,
@@ -2101,7 +2109,7 @@
         maxFileCount: 0,
         msgValidationErrorClass: 'text-danger',
         msgValidationErrorIcon: '<i class="glyphicon glyphicon-exclamation-sign"></i> ',
-        msgErrorClass: 'file-error-message',
+       // msgErrorClass: 'file-error-message',
         progressClass: "progress-bar progress-bar-success progress-bar-striped active",
         progressCompleteClass: "progress-bar progress-bar-success",
         previewFileType: 'image',

@@ -10,10 +10,12 @@ namespace App\Modules\Front\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\Log;
 use Mews\Captcha\Facades\Captcha;
 use Qiniu\Http\Request;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use Torann\GeoIP\GeoIPFacade as GeoIP;
+use App\Lib\CurlUtil;
 
 class IndexController extends Controller
 {
@@ -96,5 +98,38 @@ class IndexController extends Controller
         }
         var_dump('the result of check captcha is success');
     }
+
+    /**
+     * 测试旧车置换的推送
+     */
+    public function getPush()
+    {
+        $userId=144;
+        $resource=1;
+        if ($resource==1) { //推送一辆车
+          //  $url='http://test.o2obest.cn:8051/api/appManage/push';
+            $url='http://api.yiliangche.cn/api/appManage/push';
+        }
+        if ($resource == 2) {
+          //  $url='http://115.28.63.41:8038/api/push/PushMes';
+        }
+        $timestamp=time();
+        //使用post方式进行远程的url访问
+        $verify=md5($timestamp.$userId.'3FEA65A048B1F1FAEB28510A6B67F330');
+        $arr=array(
+            'data'=>array(
+                'userId'=>$userId,
+                'timestamp'=>$timestamp,
+                'from'=>'8',
+                'title'=>'sadsd',
+                'message'=>'asdsdfsfdas',
+                'url'=>'dsdsdsddssd',
+                'verify'=>$verify
+            )
+        );
+        $result=CurlUtil::postRequest($url,$arr);
+        var_dump($result);
+    }
+
 
 }

@@ -21,7 +21,6 @@ class ActivityController extends Controller{
          return view('front.activityList');
     }
 
-
     /**
      * 创建活动
      *
@@ -34,6 +33,7 @@ class ActivityController extends Controller{
      * 用于无限分页响应
      * @param Request $request
      */
+
     public function postShowActivity(Request $request){
         return 0;
     }

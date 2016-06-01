@@ -220,27 +220,16 @@
                     </div>
                 </div>
             </div>
+
              {{--时间选择精确到天--}}
             <div class="form-group">
                 <label for="lastname" class="col-sm-2 control-label">开始时间</label>
-                @yield('time-day')
+                @yield('time-day-start')
             </div>
+
             <div class="form-group">
                 <label for="lastname" class="col-sm-2 control-label">结束时间</label>
-                <div class="col-md-6">
-                    <div class="col-md-2"><select name="end_year" class="form-control col-md-2"></select></div>
-                    <div class="col-md-2"><select name="end_month" class="form-control col-md-2"></select></div>
-                    <div class="col-md-2"><select name="end_day" class="form-control col-md-2"></select></div>
-                    <script>
-                        //new YMDselect('year1','month1');
-                        //new YMDselect('year1','month1',1990);
-                        //new YMDselect('year1','month1',1990,2);
-                        //new YMDselect('year1','month1','day1');
-                        new YMDselect('end_year', 'end_month', 'end_day');
-                        //new YMDselect('year1','month1','day1',1990,2);
-                        //new YMDselect('year1','month1','day1',1990,2,10);
-                    </script>
-                </div>
+                @yield('time-day-end')
             </div>
 
                {{--时间选择精确到秒--}}
@@ -254,7 +243,6 @@
                 <div class="col-md-2">
                     <input type="text" class="form-control" id="lastname"
                            value="" name="addr">
-
                     <div style="color: red">
                         @if(count($errors)>0)
                             @if($errors->has('addr'))
@@ -264,7 +252,8 @@
                     </div>
                 </div>
             </div>
-            {{--具体内容 使用百度编辑器--}}
+
+                {{--具体内容 使用百度编辑器--}}
             <div class="form-group">
                 <label for="lastname" class="col-sm-2 control-label">具体内容</label>
                 <div class="col-md-8">

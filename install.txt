@@ -21,6 +21,7 @@ public/js/unslider.js
   //前后端公用的功能在app/Http/Controllers/下面写控制器
   //瀑布流
 public/js/noframework.waypoints.min.js activityList.blade.php
+
 //图片裁剪网站。Image Cropper（jquery名称）https://fengyuanchen.github.io/cropper/
 https://github.com/fengyuanchen/cropper
 //调试工具

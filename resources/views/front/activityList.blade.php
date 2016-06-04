@@ -1,6 +1,7 @@
 {{--社团空间--}}
 @extends('layouts.app')
 @include('layouts.navigation')
+
 @section('content')
         {{--导航栏css--}}
         @yield('navigation-style')

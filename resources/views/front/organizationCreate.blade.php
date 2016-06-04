@@ -1,9 +1,15 @@
 @extends('layouts.app')
-@include('layouts.uploadSinglePicture')
 @include('layouts.time')
 @include('layouts.UEditor')
-@section('content')
+@include('layouts.avatar')
+@include('layouts.uploadImg_common')
+{{--@include('layouts.pictureCropUpload')
+@include('layouts.clipAndUploadPicture')
+@include('layouts.clipPicture')--}}
+{{--@include('layouts.uploadSinglePicture')--}}
+{{--@yield('clipAndUploadPicture-css')--}}
 
+@section('content')
     <script type="text/javascript" src="{{URL::asset('/')}}js/YMDClass.js?version=01"></script>
     <script type="text/javascript" src="{{URL::asset('/')}}js/time/laydate.js?version=01"></script>
     @yield('time-day-js')
@@ -65,41 +71,204 @@
             margin: 0;
         }
     </style>
+<style>
+    .row {
+        margin-top: 8px;
+        margin-bottom: 4px;
+    }
+</style>
+    {{--图片剪切--}}
+    @yield('clipPicture-js')
+    @yield('clipPicture-css')
 
     {{--单图上传--}}
     @yield('uploadSinglePicture-css')
-    @yield('uploadSinglePicture-js')
-    @yield('uploadSinglePicture-js-initFileInput')
+      @yield('uploadSinglePicture-js-initFileInput')
+
 
     {{--图片上传--}}
-    <script type="text/javascript" src="{{URL::asset('/')}}js/clipPictureUpload/cropper.js?version=01"></script>
-    <script type="text/javascript" src="{{URL::asset('/')}}js/clipPictureUpload/main.js?version=01"></script>
-    <link href="{{URL::asset('/')}}css/clipPictureUpload/cropper.css?version=01" rel='stylesheet' type='text/css'>
-    <link href="{{URL::asset('/')}}css/clipPictureUpload/main.css?version=01" rel='stylesheet' type='text/css'>
+    @yield('pictureCropUpload-js')
+    @yield('pictureCropUpload-css')
+
+    {{--头像上传--}}
+    @yield('avatar-css')
+    @yield('avatar')
+    @yield('avatar-js-function')
 
     <div id="legend" class="">
         <legend class="" style="margin-left: 100px;">创建社团</legend>
     </div>
 
-    <form class="form-horizontal" role="form" action="{{url('seller/edit')}}" method="post"
+    <div class="container">
+        {{--社团名称--}}
+        <div class="row">
+            {{--<label for="lastname" class="col-md-1 control-label">社团名称</label>--}}
+            <div class="col-md-1"> 社团名称</div>
+            <div class="col-md-4">
+                <input name="seller_zh" class="form-control" type="text" id="lastname" value="">
+            </div>
+        </div>
+        {{--人员类型--}}
+        <div class="row">
+            <div class="col-md-1">人员类型</div>
+                <div class="col-md-6">
+                    @if(0)
+                        <label class="checkbox-inline">
+                            <input type="radio" class="btn btn-default" name="sex" id="optionsRadios1"
+                                   value="1">正式人员
+                        </label>
+                        <label class="checkbox-inline">
+                            <input type="radio" class="btn btn-default" name="sex" id="optionsRadios2"
+                                   value="0" checked> 正式+编外人员
+                        </label>
+                        <label class="checkbox-inline">
+                            <input type="radio" class="btn btn-default"  name="sex" id="optionsRadios2"
+                                   value="0" checked> 无要求
+                        </label>
+                    @else
+                        <label class="checkbox-inline">
+                            <input type="radio" class="btn btn-default" name="sex" id="optionsRadios1"
+                                   value="1" checked>正式人员
+                        </label>
+                        <label class="checkbox-inline">
+                            <input type="radio" class="btn btn-default" name="sex" id="optionsRadios2"
+                                   value="0"> 正式+编外人员
+                        </label>
+                        <label class="checkbox-inline">
+                            <input type="radio" class="btn btn-default" name="sex" id="optionsRadios2"
+                                   value="0"> 无要求
+                        </label>
+                    @endif
+                </div>
+            </div>
+        {{--是否公开--}}
+        <div class="row">
+            <div class="col-md-1">公开与否</div>
+                <div class="col-md-2">
+                    @if(0)
+                        <label class="checkbox-inline">
+                            <input type="radio" class="btn btn-default" name="sex" id="optionsRadios1"
+                                   value="1">公开
+                        </label>
+                        <label class="checkbox-inline">
+                            <input type="radio" class="btn btn-default" name="sex" id="optionsRadios2"
+                                   value="0" checked> 非公开
+                        </label>
+                    @else
+                        <label class="checkbox-inline">
+                            <input type="radio" class="btn btn-default" name="sex" id="optionsRadios1"
+                                   value="1" checked>公开
+                        </label>
+                        <label class="checkbox-inline">
+                            <input type="radio" class="btn btn-default" name="sex" id="optionsRadios2"
+                                   value="0"> 非公开
+                        </label>
+                    @endif
+                </div>
+        </div>
+        {{--联系人电话--}}
+        <div class="row">
+            <div class="col-md-1">联系电话</div>
+
+                <div class="col-md-2">
+                    <input type="text" class="form-control" id="lastname" value="" name="tel">
+                    <div style="color: red">
+                        @if(count($errors)>0)
+                            @if($errors->has('tel'))
+                                {{ '*' }}
+                            @endif
+                        @endif
+                    </div>
+                </div>
+            </div>
+        {{--参加人数--}}
+        <div class="row">
+            <div class="col-md-1">参加人数</div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control"id="lastname" value="" name="mobile">
+                    <div style="color: #ff0000">
+                        @if(count($errors)>0)
+                            @if($errors->has('mobile'))
+                                {{ '*' }}
+                            @endif
+                        @endif
+                    </div>
+                </div>
+            </div>
+        {{--时间选择精确到天--}}
+        <div class="row">
+            <div class="col-md-1">开始时间</div>
+            @yield('time-day-start')
+            </div>
+        <div></div>
+         <div class="row">
+            <div class="col-md-1">结束时间</div>
+                @yield('time-day-end')
+            </div>
+        {{--时间选择精确到秒--}}
+        <div class="row">
+            @yield('time-second')
+        </div>
+        {{--活动地址--}}
+        <div class="row">
+            <div class="col-md-1">活动地址</div>
+                <div class="col-md-2">
+                    <input type="text"class="form-control" id="lastname" value="" name="addr">
+                </div>
+            </div>
+        {{--具体内容 使用百度编辑器--}}
+        <div class="row">
+            <div class="col-md-1">具体内容</div>
+                <div class="col-md-8">
+                    @yield('UEditor')
+                </div>
+            </div>
+        {{--单图上传--}}
+       {{-- <div class="row">
+            <div class="col-md-1">LOGO</div>
+                <div class="col-md-4">
+                    <input class="form-control" hidden name="singlePicture" id="singlePicture-two">
+                    @yield('uploadSinglePicture')
+                </div>
+            </div>
+            @yield('uploadSinglePicture-js')
+            <script>
+                //初始化fileinput控件（第一次初始化）
+                initFileInput("file-0a", "/front/organization/single-picture");
+            </script>--}}
+
+        {{--提交内容--}}
+        <div class="row">
+                <div class="col-sm-offset-2 col-sm-10">
+                    {{--  <input name="_token" type="hidden" value="{{ csrf_token() }}"/>--}}
+                    <input class="form-control"  name="seller_id" type="hidden" value=""/>
+                    <button type="submit" class="btn btn-default">提交</button>
+                </div>
+            </div>
+
+        {{--单图上传可与头像上传共用--}}
+        <div class="row">
+            @yield('uploadImg_common')
+            @yield('uploadImg_common-js-function')
+        </div>
+
+    </div>
+
+
+    {{--<form class="form-horizontal" role="form" action="{{url('seller/edit')}}" method="post"
           enctype="multipart/form-data">
         <fieldset>
-            @if(count($errors)>0)
-                @if($errors->has('tel'))
-                    {{ '*' }}
-                @endif
-            @endif
-            {{--社团名称--}}
+            --}}{{--社团名称--}}{{--
             <div class="form-group">
                 <!-- Text input-->
-                <label for="lastname" class="col-sm-2 control-label">活动名称</label>
+                <label for="lastname" class="col-sm-2 control-label">社团名称</label>
 
                 <div class="col-md-2">
                     <input name="seller_zh" type="text" class="form-control" id="lastname"
                            value="">
                 </div>
             </div>
-            {{--商户编号--}}
+            --}}{{--商户编号--}}{{--
             <div hidden class="form-group">
                 <!-- Text input-->
                 <label for="lastname" class="col-sm-2 control-label">商户编号</label>
@@ -113,7 +282,7 @@
                     </div>
                 </div>
             </div>
-            {{--商户等级--}}
+            --}}{{--商户等级--}}{{--
             <div hidden class="form-group">
                 <!--Select Basic-->
                 <label for="name" class="col-sm-2 control-label">商户等级</label>
@@ -126,7 +295,7 @@
                     </select>
                 </div>
             </div>
-            {{--商户类型--}}
+            --}}{{--商户类型--}}{{--
             <div hidden class="form-group">
                 <!--Select Basic-->
                 <label for="name" class="col-sm-2 control-label">商户类型</label>
@@ -139,7 +308,7 @@
                     </select>
                 </div>
             </div>
-            {{--联系人职务--}}
+            --}}{{--联系人职务--}}{{--
             <div hidden class="form-group">
                 <!-- Text input-->
                 <label for="lastname" class="col-sm-2 control-label">联系人职务</label>
@@ -157,7 +326,7 @@
                     </div>
                 </div>
             </div>
-            {{--人员类型--}}
+            --}}{{--人员类型--}}{{--
             <div class="form-group">
                 <label for="lastname" class="col-sm-2 control-label">人员类型</label>
 
@@ -191,7 +360,7 @@
                     @endif
                 </div>
             </div>
-            {{--公开与否--}}
+            --}}{{--公开与否--}}{{--
             <div class="form-group">
                 <label for="lastname" class="col-sm-2 control-label">公开与否</label>
 
@@ -217,7 +386,7 @@
                     @endif
                 </div>
             </div>
-            {{--联系人电话--}}
+            --}}{{--联系人电话--}}{{--
             <div class="form-group">
                 <!-- Text input-->
                 <label for="lastname" class="col-sm-2 control-label">联系人电话</label>
@@ -235,7 +404,7 @@
                     </div>
                 </div>
             </div>
-            {{--参加人数--}}
+            --}}{{--参加人数--}}{{--
             <div class="form-group">
                 <!-- Text input-->
                 <label for="lastname" class="col-sm-2 control-label">参加人数</label>
@@ -253,7 +422,7 @@
                     </div>
                 </div>
             </div>
-            {{--商户全称--}}
+            --}}{{--商户全称--}}{{--
             <div hidden class="form-group">
                 <!-- Text input-->
                 <label for="lastname" class="col-sm-2 control-label">商户全称</label>
@@ -265,7 +434,7 @@
                     </div>
                 </div>
             </div>
-            {{--商户简称--}}
+            --}}{{--商户简称--}}{{--
             <div hidden class="form-group">
                 <!-- Text input-->
                 <label for="lastname" class="col-sm-2 control-label">商户简称</label>
@@ -279,20 +448,20 @@
                 </div>
             </div>
 
-            {{--时间选择精确到天--}}
-                <div class="form-group">
-                    <label for="lastname" class="col-sm-2 control-label">开始时间</label>
-                    @yield('time-day-start')
-                </div>
-                <div class="form-group">
-                    <label for="lastname" class="col-sm-2 control-label">结束时间</label>
-                    @yield('time-day-end')
-                </div>
+            --}}{{--时间选择精确到天--}}{{--
+            <div class="form-group">
+                <label for="lastname" class="col-sm-2 control-label">开始时间</label>
+                @yield('time-day-start')
+            </div>
+            <div class="form-group">
+                <label for="lastname" class="col-sm-2 control-label">结束时间</label>
+                @yield('time-day-end')
+            </div>
 
-            {{--时间选择精确到秒--}}
-                @yield('time-second')
+            --}}{{--时间选择精确到秒--}}{{--
+            @yield('time-second')
 
-            {{--活动地址--}}
+            --}}{{--活动地址--}}{{--
             <div class="form-group">
                 <!-- Text input-->
                 <label for="lastname" class="col-sm-2 control-label">活动地址</label>
@@ -300,7 +469,6 @@
                 <div class="col-md-2">
                     <input type="text" class="form-control" id="lastname"
                            value="" name="addr">
-
                     <div style="color: red">
                         @if(count($errors)>0)
                             @if($errors->has('addr'))
@@ -311,92 +479,57 @@
                 </div>
             </div>
 
-            {{--具体内容 使用百度编辑器--}}
-                <div class="form-group">
-                    <label for="lastname" class="col-sm-2 control-label">具体内容</label>
-                    <div class="col-md-8">
-                        @yield('UEditor')
-                    </div>
+            --}}{{--具体内容 使用百度编辑器--}}{{--
+            <div class="form-group">
+                <label for="lastname" class="col-sm-2 control-label">具体内容</label>
+                <div class="col-md-8">
+                    @yield('UEditor')
                 </div>
+            </div>
 
-            {{--图片上传和裁剪--}}
-            {{--<div class="form-group">
+            --}}{{--单图上传--}}{{--
+            <div class="form-group">
                 <label for="lastname" class="col-sm-2 control-label">LOGO</label>
+                <div class="col-md-4">
+                    <input hidden name="singlePicture" id="singlePicture-two">
+                    @yield('uploadSinglePicture')
+                </div>
+            </div>
+                @yield('uploadSinglePicture-js')
+                <script>
+                //初始化fileinput控件（第一次初始化）
+                initFileInput("file-0a", "/front/organization/single-picture");
+            </script>
 
-                <div class="col-md-12">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-9">
-                                <div class="img-container">
-                                    <img id="image" src="../assets/img/picture.jpg" alt="Picture">
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="docs-preview clearfix">
-                                    <div class="img-preview preview-lg"></div>
-                                    <div class="img-preview preview-md"></div>
-                                    <div class="img-preview preview-sm"></div>
-                                    <div class="img-preview preview-xs"></div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-9 docs-buttons">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-primary" data-method="scaleX" data-option="-1" title="Flip Horizontal">
-                                <span class="docs-tooltip" data-toggle="tooltip" title="$().cropper(&quot;scaleX&quot;, -1)">
-                                  <span class="fa fa-arrows-h"></span>
-                                </span>
-                                    </button>
-                                    <button type="button" class="btn btn-primary" data-method="scaleY" data-option="-1" title="Flip Vertical">
-                                    <span class="docs-tooltip" data-toggle="tooltip" title="$().cropper(&quot;scaleY&quot;-1)">
-                                      <span class="fa fa-arrows-v"></span>
-                                    </span>
-                                    </button>
-                                </div>
-                                    <label class="btn btn-primary btn-upload" for="inputImage"
-                                           title="Upload image file">
-                                        <input type="file" class="sr-only" id="inputImage" name="file" accept="image/*">
-                                                <span class="docs-tooltip" data-toggle="tooltip" title="Import image with Blob URLs">
-                                                  <span class="fa fa-upload"></span>
-                                                </span>
-                                    </label>
-                                </div>
-
-                            </div>
-                            <div class="col-md-3 docs-toggles">
-                            </div>
+                --}}{{--图片剪切--}}{{--
+  --}}{{--              <div  class="form-group">
+                    <label for="lastname" class="col-sm-2 control-label">头像</label>--}}{{--
+                    --}}{{--如果已经有图显示图--}}{{--
+        --}}{{--            <div class="col-md-3">
+                        @yield('clipAndUploadPicture')
                         </div>
                     </div>
-
-                </div>--}}
-
-        {{--单图上传--}}
-        <div class="form-group">
-            <label for="lastname" class="col-sm-2 control-label">图片</label>
-            <div class="col-md-4">
-                <input hidden name="singlePicture" id="singlePicture-two">
-              @yield('uploadSinglePicture')
+                @yield('clipAndUploadPicture-js')
+                @yield('clipAndUploadPicture-js-function')--}}{{--
+                --}}{{--如果已经有图片了就使用下面的进行图片的剪切，没有图片使用上面的进行剪切--}}{{--
+             --}}{{--       @yield('clipPicture-one')
+                    <img src="{{URL::asset('/')}}upload/img/1464858690.0437.jpeg" id="cropbox" />
+                    @yield('clipPicture-two')
+                    @yield('clipPicture-js-function')
+                    @yield('clipPicture-js')--}}{{--
+            --}}{{--提交--}}{{--
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    --}}{{--  <input name="_token" type="hidden" value="{{ csrf_token() }}"/>--}}{{--
+                    <input name="seller_id" type="hidden" value=""/>
+                    <button type="submit" class="btn btn-default">提交</button>
+                </div>
             </div>
-        </div>
-        <script>
-            //初始化fileinput控件（第一次初始化）
-            initFileInput("file-0a", "/front/organization/single-picture");/*user/editPortrait是*/
-        </script>
-
-        {{--提交--}}
-        <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-                {{--  <input name="_token" type="hidden" value="{{ csrf_token() }}"/>--}}
-                <input name="seller_id" type="hidden" value=""/>
-                <button type="submit" class="btn btn-default">提交</button>
-            </div>
-        </div>
 
         </fieldset>
-    </form>
+    </form>--}}
+
     {{--表单的客户端验证，需要后端配合，formRequest的第一个参数就是后台的一个验证规则文件--}}
     {!! JsValidator::formRequest('App\Http\Requests\OrganizationCreateForm') !!}
+
 @endsection

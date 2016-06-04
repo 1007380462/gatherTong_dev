@@ -4,8 +4,15 @@
                 <input name="singlePicture" id="file-0a" class="file" type="file" multiple data-min-file-count="1">
                 <br>
         </div>
-
-    <script>
+   {{--     <script type="text/javascript">
+            $(function()
+            {
+                $('#file-0a').click(function(){
+                    $.getScript("{{URL::asset('/')}}js/uploadSinglePicture/fileinput.js?version=01");
+                });
+            });
+        </script>--}}
+        <script>
         $("#file-0").fileinput({
             'allowedFileExtensions' : ['jpg', 'png','gif'],
         });
@@ -58,6 +65,7 @@
     <link href="{{URL::asset('/')}}css/uploadSinglePicture/fileinput.css?version=01" rel='stylesheet' type='text/css'>
     <link href="{{URL::asset('/')}}css/uploadSinglePicture/normalize.css?version=01" rel='stylesheet' type='text/css'>
     @endsection
+
 @section('uploadSinglePicture-js')
     <script src="{{URL::asset('/')}}js/uploadSinglePicture/fileinput.js?version=01"></script>
     <script src="{{URL::asset('/')}}js/uploadSinglePicture/fileinput_locale_zh.js?version=01"></script>

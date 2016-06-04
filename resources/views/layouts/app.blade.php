@@ -37,7 +37,7 @@
 </head>
 
 <body id="app-layout" >
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default" role="navigation">
     <div class="container">
         <div class="navbar-header">
 
@@ -48,14 +48,17 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-
+            <div>
+                <p style="font-weight: 700 ;font-size: 24px" class="navbar-text"><a href="#"> GT</a></p>
+            </div>
             <!-- Branding Image -->
-            <a class="navbar-brand" href="{{ url('/') }}">
-                GT
-            </a>
+            {{--<a class="navbar-brand" href="#">--}}
+                {{--GTsdsd说三道四--}}
+            {{--</a>--}}
         </div>
 
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
+
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
                 <li><a href="{{ url('/home') }}">Home</a></li>
@@ -91,7 +94,7 @@
 @yield('content')
 
 <footer class="container ">
-    <p>&copy; Company 2012</p>
+    <p >&copy; Company 2012</p>
 </footer>
 </body>
 </html>

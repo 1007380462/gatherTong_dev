@@ -18,8 +18,8 @@ class OrganizationController extends Controller{
      */
     public function getOrganizationSpace(Request $request)
     {
-
-        return view('front.organization');
+          $userInfo='';
+        return view('front.organization',$userInfo);
     }
 
     /**

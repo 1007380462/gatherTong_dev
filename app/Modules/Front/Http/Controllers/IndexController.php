@@ -24,7 +24,7 @@ class IndexController extends Controller
      * web first page
      *
      */
-    public function getIndex()
+    public function getOldIndex()
     {
        /* Log::emergency($error);     //紧急状况，比如系统挂掉
         Log::alert($error);     //需要立即采取行动的问题，比如整站宕掉，数据库异常等，这种状况应该通过短信提醒
@@ -58,6 +58,9 @@ class IndexController extends Controller
         return view('front.index');
     }
 
+    public function getIndex(){
+        return view('front.shouye');
+    }
     /**
      *excel列表的导出；
      */

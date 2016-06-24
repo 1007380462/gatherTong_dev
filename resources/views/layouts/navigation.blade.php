@@ -5,21 +5,21 @@
             <a href="{{ url('seller/seller-info') }}" style="background-color: #f2efe3" class="clickB collapsed">首页</a>
         </li>
         <li>
-            <a href="#systemSetting" style="background-color: #f2efe3" class="nav-header collapsed clickB" data-toggle="collapse">商品</a>
+            <a href="#systemSetting" style="background-color: #f2efe3" class="nav-header collapsed clickB" data-toggle="collapse">活动</a>
             <ul id="systemSetting" class="nav nav-list collapse secondmenu" style="height: 0px;">
-                <li><a href="{{ url('good/good-info') }}">商品列表</a></li>
-                <li><a href="{{ url('good/good-stockout') }}">缺货商品</a></li>
-                <li><a href="{{ url('good/good-classify') }}">商品分类</a></li>
-                <li><a href="{{ url('good/good-type') }}">商品类型</a></li>
-                <li><a href="{{ url('good/good-brand') }}">商品品牌</a></li>
+                <li><a href="{{ url('good/good-info') }}">学习类</a></li>
+                <li><a href="{{ url('good/good-stockout') }}">人文类</a></li>
+                <li><a href="{{ url('good/good-classify') }}">语言类</a></li>
+                <li><a href="{{ url('good/good-type') }}">生活类</a></li>
+                <li><a href="{{ url('good/good-brand') }}">娱乐类</a></li>
             </ul>
         </li>
 
         <li>
-            <a href="#systemSetting1" style="background-color: #f2efe3" class="nav-header collapsed clickB" data-toggle="collapse">订单</a>
+            <a href="#systemSetting1" style="background-color: #f2efe3" class="nav-header collapsed clickB" data-toggle="collapse">活动资料</a>
             <ul id="systemSetting1" class="nav nav-list collapse secondmenu" style="height: 0px;">
-                <li><a href="{{ url('order/order-info') }}">订单列表</a></li>
-                <li><a href="{{ url('order/relation-order') }}">关联订单列表</a></li>
+                <li><a href="{{ url('order/order-info') }}">活动策划</a></li>
+                <li><a href="{{ url('order/relation-order') }}">活动</a></li>
                 <li><a href="{{ url('order/order-delivery') }}">发货单</a></li>
                 <li><a href="{{ url('order/reship') }}">退货单</a></li>
                 <li><a href="{{ url('order/payment') }}">收款单</a></li>
@@ -29,10 +29,11 @@
         </li>
 
         <li>
-            <a href="#systemSetting2" style="background-color: #f2efe3" class="nav-header collapsed clickB" data-toggle="collapse">商户</a>
-            <ul id="systemSetting2" class="nav nav-list collapse secondmenu" style="height: 0px;">
-                <li><a href="{{ url('seller/seller-info') }}">商户列表</a></li>
-            </ul>
+            <a href="#systemSetting2" style="background-color: #f2efe3" class="nav-header collapsed clickB" >活动赞助</a>
+        </li>
+
+        <li>
+            <a href="#systemSetting2" style="background-color: #f2efe3" class="nav-header collapsed clickB" >帮助</a>
         </li>
     </ul>
     @endsection

@@ -17,7 +17,7 @@ class ActivityController extends Controller{
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      * 显示初始活动
      */
-    public function getShowActivity(){
+    public function getShowOrganizationActivity(){
          return view('front.activityList');
     }
 

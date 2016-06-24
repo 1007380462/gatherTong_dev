@@ -1,21 +1,23 @@
 {{--精确到天_开始时间--}}
 @section('time-day-start')
     <div class="col-md-6">
-        <div style="padding-left: 0px" class="col-md-3"><select name="start_year" class="form-control"></select></div>
-        <div class="col-md-3"><select name="start_month" class="form-control"></select></div>
-        <div class="col-md-1"><select name="start_day" class="form-control"></select></div>
-        {{--<div class="col-md-2"><select name="start_day" class="form-control col-md-2"></select></div>--}}
+        <div style="padding-left: 0px" class="col-md-3"><select id="start_year" name="start_year" class="form-control"></select></div>
+        <div class="col-md-3"><select id="start_month" name="start_month" class="form-control"></select></div>
+        <div class="col-md-3"><select id="start_day" name="start_day" class="form-control"></select></div>
     </div>
         <script>
+            var current_date=new Date();
+            var current_year=current_date.getFullYear();
+            var current_month=current_date.getMonth();
+            var current_day=current_date.getDate();
             //new YMDselect('year1','month1');
             //new YMDselect('year1','month1',1990);
             //new YMDselect('year1','month1',1990,2);
             //new YMDselect('year1','month1','day1');
-            new YMDselect('start_year', 'start_month', 'start_day');
+            new YMDselect('start_year', 'start_month', 'start_day',current_year,current_month,current_day);
             //new YMDselect('year1','month1','day1',1990,2);
             //new YMDselect('year1','month1','day1',1990,2,10);
         </script>
-
     @endsection
 @section('time-day-css')
     <style type="text/css">
@@ -38,11 +40,15 @@
 {{--精确到天_结束时间--}}
 @section('time-day-end')
     <div class="col-md-6">
-        <div style="padding-left: 0px" class="col-md-3"><select name="end_year" class="form-control" ></select></div>
-        <div class="col-md-3"><select name="end_month"class="form-control" ></select></div>
-        <div class="col-md-1"><select name="end_day" class="form-control"></select></div>
+        <div style="padding-left: 0px" class="col-md-3"><select id="end_year" name="end_year" class="form-control" ></select></div>
+        <div class="col-md-3"><select id="end_month"  name="end_month"class="form-control" ></select></div>
+        <div class="col-md-3"><select id="end_day" name="end_day" class="form-control"></select></div>
         <script>
-            new YMDselect('end_year', 'end_month', 'end_day');
+            var current_date=new Date();
+            var current_year=current_date.getFullYear();
+            var current_month=current_date.getMonth();
+            var current_day=current_date.getDate();
+            new YMDselect('end_year', 'end_month', 'end_day',current_year,current_month,current_day);
         </script>
     </div>
 @endsection

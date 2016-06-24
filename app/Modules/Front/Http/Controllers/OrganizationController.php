@@ -18,8 +18,9 @@ class OrganizationController extends Controller{
      */
     public function getOrganizationSpace(Request $request)
     {
-          $userInfo='';
-        return view('front.organization',$userInfo);
+        //增加权限控制
+          $userInfo=array();
+        return view('front.organizationSpace',$userInfo);
     }
 
     /**
@@ -27,7 +28,6 @@ class OrganizationController extends Controller{
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function getOrganizationList(Request $request){
-
         return view('front.organizationList');
     }
 
@@ -37,6 +37,7 @@ class OrganizationController extends Controller{
      * @param Request $request
      */
     public function getCreateOrganization(Request $request){
+        //增加权限控制
         return view('front.organizationCreate');
     }
 

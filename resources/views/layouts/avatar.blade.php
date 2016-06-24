@@ -1,10 +1,11 @@
 @section('avatar')
     <div class="form-group">
-    <label for="lastname" class="col-sm-2 control-label">头像</label>
+        <div for="lastname" class="col-md-1">头像</div>
+    {{--<label for="lastname" class="col-sm-2 control-label">头像</label>--}}
     <div class="col-md-3">
         <div id="cropContainerModal">
             {{--下面默认是没有的，是js自动生成的 --}}
-            <img class="croppedImg" src="{{URL::asset('/')}}img/avatar/croppedImg.jpeg"></div>
+            <img style="background-color: red" class="croppedImg" height="200px" width="208" src="{{URL::asset('/')}}img/avatar/croppedImg.jpeg"></div>
      {{--   <div class="cropControls cropControlsUpload">
                 <i class="cropControlUpload"></i>
                 <i class="cropControlRemoveCroppedImage"></i>
@@ -14,7 +15,7 @@
             </form>--}}
     </div>
         </div>
-    </div>
+
 @endsection
 
 @section('avatar-js-function')

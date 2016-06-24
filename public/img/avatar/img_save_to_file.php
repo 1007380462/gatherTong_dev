@@ -3,6 +3,7 @@
 *	!!! THIS IS JUST AN EXAMPLE !!!, PLEASE USE ImageMagick or some other quality image processing libraries
 */
     $imagePath = dirname(dirname(dirname(__FILE__)))."/upload/avatar/";
+
 	$allowedExts = array("gif", "jpeg", "jpg", "png", "GIF", "JPEG", "JPG", "PNG");
 	$temp = explode(".", $_FILES["img"]["name"]);
 	$extension = end($temp);
@@ -28,17 +29,18 @@
 		}
 	  else
 		{
-			
-	      $filename = $_FILES["img"]["tmp_name"];
-		  list($width, $height) = getimagesize( $filename );
-
-		  move_uploaded_file($filename,  $imagePath . $_FILES["img"]["name"]);
+	      $filename_tmp = $_FILES["img"]["tmp_name"];
+		  list($width, $height) = getimagesize( $filename_tmp );
+			$mtime=explode(' ',microtime());
+			$startTime=$mtime[1]+$mtime[0];
+			$realFileName=$startTime.".".$extension;
+		  move_uploaded_file($filename_tmp,  $imagePath .$realFileName);
 
 		  $response = array(
 			"status" => 'success',
 			//"url" => $imagePath.$_FILES["img"]["name"],
 			//  "url"=>'http://192.168.60.129:8080/upload/avatar/2.4.png',
-			  "url"=>'http://'.$_SERVER['HTTP_HOST'].'/upload/avatar/2.4.png',
+			  "url"=>'http://'.$_SERVER['HTTP_HOST'].'/upload/avatar/'.$realFileName,
 			"width" => $width,
 			"height" => $height
 		  );

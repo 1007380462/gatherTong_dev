@@ -17,7 +17,7 @@ class EventServiceProvider extends ServiceProvider
             'App\Listeners\EventListener',
         ],
 
-        'SocialiteProviders\Manager\SocialiteWasCalled' => [
+            'SocialiteProviders\Manager\SocialiteWasCalled' => [
             'SocialiteProviders\Weibo\WeiboExtendSocialite@handle',
             'SocialiteProviders\LinkedIn\LinkedInExtendSocialite@handle',
             'SocialiteProviders\Qq\QqExtendSocialite@handle',

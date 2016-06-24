@@ -30,4 +30,47 @@ class Kernel extends HttpKernel
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
     ];
+    public function ad(){
+        //connect
+        $server = 'localhost';
+        $user = 'root';
+        $pwd = '';
+        $dbName = 'recomend_system';
+        $db = mysqli_connect($server, $user, $pwd, $dbName);
+        $newId='';
+        for($id=0;$id<=28639;$id++){
+            $sql="select id from tableName where id=".$id;
+            $result = mysqli_query($db, $sql);
+            $result = mysqli_fetch_all($result);
+            $ID=$result[0][0];
+
+            $newOption='';
+            for(;;){
+                $sql="select newoption from tableName where id=".$newId;
+                $result = mysqli_query($db, $sql);
+                $result = mysqli_fetch_all($result);
+                $newOption=$result[0][0];
+                //execute sql statement
+                if($newId>1111){
+                    break;
+                }
+                if(empty($result)){
+                    $newId++;
+                }else{
+                    $newOption='';
+                    break;
+                }
+            }
+            if(empty($newOption)){
+                break;
+            }
+            $sql="insert into TABLE_NAME ()VALUES (".$ID.",".$newOption.")";
+            $result = mysqli_query($db, $sql);
+            $result = mysqli_fetch_all($result);
+            //execute sql statement;
+
+        }
+
+
+    }
 }

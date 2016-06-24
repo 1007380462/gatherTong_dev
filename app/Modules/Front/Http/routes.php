@@ -19,6 +19,8 @@ Route::group(['prefix' => 'front'], function() {
 	Route::controller('/activity','ActivityController');
 	Route::controller('/register','RegisterController');
 	Route::controller('/tools','ToolsController');
+	Route::controller('/platformActivity','PlatformActivityController');
+	Route::controller('/sponsor','SponsorController');
 	Route::controller('/','IndexController');
 
 

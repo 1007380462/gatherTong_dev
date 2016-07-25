@@ -15,12 +15,13 @@ Route::group(['prefix' => 'front'], function() {
 
 	Route::controller('/organization','OrganizationController');
 	Route::controller('/login','LoginController');
-	Route::Controller('/person','PersonController');
+	Route::Controller('/person','PersonSpaceController');
 	Route::controller('/activity','ActivityController');
 	Route::controller('/register','RegisterController');
 	Route::controller('/tools','ToolsController');
 	Route::controller('/platformActivity','PlatformActivityController');
 	Route::controller('/sponsor','SponsorController');
+	Route::controller('/organizationSpace','OrganizationSpaceController');
 	Route::controller('/','IndexController');
 
 

@@ -7,7 +7,10 @@ namespace App\Modules\Front\Http\Controllers;
  * Time: 15:48
  */
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Request;
+
 class LoginController extends Controller{
+
     /**
      * deal login
      */
@@ -23,6 +26,10 @@ class LoginController extends Controller{
         //delete session information
 
        return redirect()->to('front/index');
+    }
+
+    public function getThirdLogin(Request $request){
+    return view('front.thirdLogin');
     }
     /**
      *use it to get jpg picture for loginBack.

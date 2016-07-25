@@ -136,7 +136,7 @@
                     程序在HTML5浏览器上运行更加完美, 能实现自动本地化保存, 即使关闭了网页, 下一次打开仍然能恢复上一次的操作.
                 </p>
                 <p>
-                    <a class="btn" href="#">查看更多 »</a>
+                    <a class="btn" href="organization-space?orgnizationId=1">查看更多 »</a>
                 </p>
                 <h2>
                     社团名称

@@ -1,0 +1,20 @@
+@extends('layouts.app')
+@section('content')
+    <?php
+    if(1){
+    ?>
+    @include('layouts.organizationHelp')
+    <?php
+    }
+    if(2){
+    ?>
+    @include('layouts.organizationHelp')
+    <?php
+    }
+    if(3){
+    ?>
+    @include('layouts.organizationHelp')
+    <?php
+    }
+    ?>
+@endsection

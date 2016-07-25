@@ -3,7 +3,9 @@
 @section('content')
     @yield('carouselFigure-css')
     @yield('carouselFigure-js')
-    <div class="container" style="background-size:100% ;padding-left: 0px;padding-right:0px">
+
+
+    <div hidden class="container content-body" style="background-size:100% ;padding-left: 0px;padding-right:0px">
 
        {{--carousel picture--}}
         <div class="row" style="background-size:100%">
@@ -43,7 +45,7 @@
                 <div class="tabbable" id="tabs-1">
                     <ul class="nav nav-tabs">
                         <li class="active">
-                            <a href="#panel-1" data-toggle="tab">热门社团</a>
+                            <a id='hotCommunity' href="#panel-1" data-toggle="tab" >热门社团</a>
                         </li>
                         <li>
                             <a href="#panel-2" data-toggle="tab">热门活动</a>
@@ -297,4 +299,31 @@
         </div>
 
     </div>
-    @endsection
+
+
+    <script>
+        ;(function(arg){
+          /*  $('#hotCommunity').attr('style','background-color:black');*/
+        })()
+    </script>
+
+    {{--判断浏览器是否禁用javascript，以及解决方案--}}
+    <noscript >
+        <style>
+            .noscri{
+                width: 1300px;
+                height:200px;
+            }
+
+        </style>
+        <h3 class="noscri" style="color:red;text-align: center">
+            Your browser does not support javascript!
+        </h3>
+    </noscript>
+    <script>
+        ;(function () {
+            $('.content-body').toggle();
+        })()
+    </script>
+
+@endsection

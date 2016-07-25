@@ -9,7 +9,7 @@ namespace App\Modules\Front\Http\Controllers;
  */
 use GuzzleHttp\Psr7\Request;
 use App\Http\Controllers\Controller;
-class PersonController extends Controller
+class PersonSpaceController extends Controller
 {
 
     /**

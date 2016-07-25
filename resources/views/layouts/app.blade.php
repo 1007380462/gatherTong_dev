@@ -79,8 +79,9 @@
 
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
+               <li> <a class="qqlogin tran" href="/auth/qq" title="QQ登录" target="_blank" rel="nofollow">QQ登录</a></li>
                 <!-- Authentication Links -->
-                @if (Auth::guest())
+            {{--    @if (Auth::guest())
                     <li><a href="{{ url('front/login/login') }}">Login</a></li>
                     <li><a href="{{ url('front/register/register') }}">Register</a></li>
                 @else
@@ -93,7 +94,7 @@
                             <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                         </ul>
                     </li>
-                @endif
+                @endif--}}
             </ul>
         </div>
     </div>

@@ -1,15 +1,18 @@
 @extends('layouts.app')
-@include('layouts.navigation')
-@include('layouts.carouselFigure')
 
 @section('content')
+    @include('layouts.navigation')
+    @include('layouts.carouselFigure')
+
     @yield('carouselFigure-css')
 
     @yield('navigation-style')
     @yield('carouselFigure-js')
 
     <div class="container" style="background-size:100% ;padding-left: 0px;padding-right:0px">
-        <div class="row" style="background-size:100%">
+
+                 {{--carousel--}}
+        <div class="row" style="background-size:100%;margin-left: -89.5px;margin-right: -89.5px ">
             <div id="banner_tabs" class="flexslider" >
                 <ul class="slides" style="padding-left:0px;margin-top: 0px">
                     <li style="margin-top: -20px; " >
@@ -41,35 +44,35 @@
         </div>
 
         <div class="row">
+
             <div class="span2 col-sm-2">
                 <ul id="nav_box" class="nav nav-tabs nav-stacked" >
-
                   {{--社团的活动--}}
                     <li>
-                        <a href="#systemSetting" style="background-color: #f2efe3" class="nav-header collapsed clickB" data-toggle="collapse">活动</a>
-                        <ul id="systemSetting" class="nav nav-list collapse secondmenu" style="height: 0px;">
-                            <li><a href="{{ url('good/good-info') }}">慈善公益类</a></li>
-                            <li><a href="{{ url('good/good-stockout') }}">体育运动类</a></li>
-                            <li><a href="{{ url('good/good-classify') }}">文化艺术类</a></li>
-                            <li><a href="{{ url('good/good-type') }}">学术科技类</a></li>
-                            <li><a href="{{ url('good/good-brand') }}">兴趣爱好类</a></li>
+                        <a href="#navigation-activity" style="background-color: #f2efe3" class="nav-header collapsed clickB" data-toggle="collapse">活动</a>
+                        <ul id="navigation-activity" class="nav nav-list collapse secondmenu" style="height: 0px;">
+                            <li><a href="javascript:void(0)" onclick="navigation_activity('a')">慈善公益类</a></li>
+                            <li><a href="javascript:void(0)" onclick="navigation_activity()">体育运动类</a></li>
+                            <li><a href="javascript:void(0)" onclick="navigation_activity()">文化艺术类</a></li>
+                            <li><a onclick="navigation_activity()" href="javascript:void(0)">学术科技类</a></li>
+                            <li><a onclick="navigation_activity()" href="javascript:void(0)">兴趣爱好类</a></li>
                         </ul>
                     </li>
 
                     {{--成员管理--}}
                     <li>
-                        <a href="#systemSetting2" style="background-color: #f2efe3" class="nav-header collapsed clickB">成员管理</a>
+                        <a onclick="navigation_member()" href="javascript:void(0)" style="background-color: #f2efe3" class="nav-header collapsed clickB">成员管理</a>
                     </li>
 
                     {{--讨论区--}}
-                    <li>
+                   {{-- <li >
                         <a href="#systemSetting2" style="background-color: #f2efe3" class="nav-header collapsed clickB">讨论区</a>
-                    </li>
+                    </li>--}}
 
                     {{--本社团的内部资料--}}
                     <li>
-                        <a href="#systemSetting1" style="background-color: #f2efe3" class="nav-header collapsed clickB" data-toggle="collapse">社团资料</a>
-                        <ul id="systemSetting1" class="nav nav-list collapse secondmenu" style="height: 0px;">
+                        <a href="#navigation-info" style="background-color: #f2efe3" class="nav-header collapsed clickB" data-toggle="collapse">社团资料</a>
+                        <ul id="navigation-info" class="nav nav-list collapse secondmenu" style="height: 0px;">
                             <li><a href="{{ url('order/order-info') }}">社团相册</a></li>
                             <li><a href="{{ url('order/relation-order') }}">社团视频</a></li>
                             <li><a href="{{ url('order/relation-order') }}">规章制度</a></li>
@@ -83,8 +86,8 @@
 
                     {{--社团一些属性的设置--}}
                     <li>
-                        <a href="#systemSetting" style="background-color: #f2efe3" class="nav-header collapsed clickB" data-toggle="collapse">设置</a>
-                        <ul id="systemSetting" class="nav nav-list collapse secondmenu" style="height: 0px;">
+                        <a href="#navigation-setting" style="background-color: #f2efe3" class="nav-header collapsed clickB" data-toggle="collapse">设置</a>
+                        <ul id="navigation-setting" class="nav nav-list collapse secondmenu" style="height: 0px;">
                             <li><a href="{{ url('good/good-info') }}">权限设置</a></li>
                             <li><a href="{{ url('good/good-stockout') }}">社团信息设置</a></li>
                             <li hidden><a href="{{ url('good/good-classify') }}">文化艺术类</a></li>
@@ -94,8 +97,8 @@
                     </li>
                     {{--帮助--}}
                     <li>
-                        <a href="#systemSetting2" style="background-color: #f2efe3" class="nav-header collapsed clickB" data-toggle="collapse">帮助</a>
-                        <ul id="systemSetting2" class="nav nav-list collapse secondmenu" style="height: 0px;">
+                        <a href="#navigation-help" style="background-color: #f2efe3" class="nav-header collapsed clickB" data-toggle="collapse">帮助</a>
+                        <ul id="navigation-help" class="nav nav-list collapse secondmenu" style="height: 0px;">
                             <li><a href="{{ url('seller/seller-info') }}">商户列表</a></li>
                         </ul>
                     </li>
@@ -145,7 +148,7 @@
               </div>--}}
 
             {{--社团列表--}}
-            <div class="span6 col-sm-6">
+            <div hidden class="span6 col-sm-7">
                 <h2>
                     社团名称
                 </h2>
@@ -157,6 +160,7 @@
                 <p>
                     <a class="btn" href="#">查看更多 »</a>
                 </p>
+
                 <h2>
                     社团名称
                 </h2>
@@ -168,9 +172,138 @@
                     <a class="btn" href="#">查看更多 »</a>
                 </p>
             </div>
+             {{--成员管理--}}
+            <div  class="span6 col-sm-7">
+                <div>
+                    <p>
+                        正式社员:<?php echo $formal ?? '0' ?>
+                    </p>
+                <p>
+                    编外社员:<?php echo $informal ?? '0' ?>
+                </p>
+                </div>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>
+                            职位
+                        </th>
+                        <th>
+                            姓名
+                        </th>
+                        <th>
+                            学号
+                        </th>
+                        <th>
+                            贡献度
+                        </th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            TB - Monthly
+                        </td>
+                        <td>
+                            01/04/2012
+                        </td>
+                           <td>
+                               Default
+                           </td>
+                    </tr>
+                    <tr class="success">
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            TB - Monthly
+                        </td>
+                        <td>
+                            01/04/2012
+                        </td>
+                            <td>
+                                Approved
+                            </td>
+                    </tr>
+                    <tr class="error">
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            TB - Monthly
+                        </td>
+                        <td>
+                            02/04/2012
+                        </td>
+                           <td>
+                               Declined
+                           </td>
+                    </tr>
+                    <tr class="warning">
+                        <td>
+                            3
+                        </td>
+                        <td>
+                            TB - Monthly
+                        </td>
+                        <td>
+                            03/04/2012
+                        </td>
+                            <td>
+                                Pending
+                            </td>
+                    </tr>
+                    <tr class="info">
+                        <td>
+                            4
+                        </td>
+                        <td>
+                            TB - Monthly
+                        </td>
+                        <td>
+                            04/04/2012
+                        </td>
+                          <td>
+                              Call in to confirm
+                          </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            {{--活动显示--}}
+            <div hidden class="span6 col-sm-7">
+                    <h3>
+                        h3.这是一套可视化布局系统.
+                    </h3>
+                    <img height="100px" width="100px" alt="100x100" src="{{URL::asset('/')}}img/avatar/logo.png" />
+                    <img height="100px" width="100px" alt="100x100" src="{{URL::asset('/')}}img/avatar/logo.png" />
+                    <img height="100px" width="100px" alt="100x100" src="{{URL::asset('/')}}img/avatar/logo.png" />
+                    <img height="100px" width="100px" alt="100x100" src="{{URL::asset('/')}}img/avatar/logo.png" />
+                    <p>
+                        <em>Git</em>
+                        是一个分布式的版本控制系统，最初由
+                        <strong>Linus Torvalds</strong>编写，
+                        用作Linux内核代码的管理。在推出后，Git在其它项目中也取得了很大成功，尤其是在Ruby社区中。
+                    </p>
+                    <div style="width: 200px;margin-left: auto">
+                        <a class="btn btn-primary" href="#">浏览</a>
+                        <a class="btn" href="#" >分享</a>
+                    </div>
+                </div>
+
+            {{--社团信息设置--}}
+            <div hidden class="span6 col-sm-7">
+
+            </div>
+
 
             {{--社团最右边表格--}}
-            <div class="span4 col-sm-4">
+            <div class="span4 col-sm-3">
                 <table class="table">
                     <thead>
                     <tr>
@@ -266,6 +399,35 @@
         </div>
     </div>
 
+      {{--发送post请求获取json数据格式--}}
+    <script>
+        function navigation_activity(subclass){
+            var data={
+              s:'sds',
+                b:'sds'
+            };
+            $.ajax({
+                type:'POST',
+                url:'',
+                data:data,
+                success:'',
+                dataType:'json'
+            });
+
+        }
+        function navigation_member(){
+            var data={
+
+            };
+            $.ajax({
+                type:'POST',
+                url:'',
+                data:data,
+                success:'',
+                dataType:'json'
+            });
+        }
+    </script>
 
     {{--瀑布流无限分页,靠近窗口顶部时调用函数handler--}}
     <div id="overflow-scroll" >

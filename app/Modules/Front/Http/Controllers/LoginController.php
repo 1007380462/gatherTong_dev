@@ -15,9 +15,11 @@ class LoginController extends Controller{
      * deal login
      */
     public function getLogin()
-    {
+    { 
+      echo "sdsd";
          return view('front.login');
     }
+
     /**
      * deal logout;
      */

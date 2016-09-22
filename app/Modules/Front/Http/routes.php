@@ -10,8 +10,10 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-
-Route::group(['prefix' => 'front'], function() {
+/**
+ * middleware 是用来进行对每个请求进行过滤的。
+ */
+Route::group(['prefix' => 'front','middleware' => ['ylcauth','userauth']],function() {
 
 	Route::controller('/organization','OrganizationController');
 	Route::controller('/login','LoginController');

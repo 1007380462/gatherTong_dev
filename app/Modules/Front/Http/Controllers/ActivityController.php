@@ -29,6 +29,7 @@ class ActivityController extends Controller{
     public function getCreateActivity(Request $request){
         return view('front.activityCreate');
     }
+
     /**
      * 用于无限分页响应
      * @param Request $request
